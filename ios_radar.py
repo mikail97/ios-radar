@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import re
 import json
@@ -17,6 +18,8 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_FILE = BASE_DIR / "state.json"
+WEB_DIR = BASE_DIR / "web"
+WEB_STATE_FILE = WEB_DIR / "state.json"
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
@@ -26,13 +29,16 @@ CHECK_INTERVAL_SECONDS = int(os.getenv("CHECK_INTERVAL_SECONDS", "900"))
 APPLE_DEV_RELEASES_RSS = "https://developer.apple.com/news/releases/rss/releases.rss"
 APPLE_DEV_NEWS_RSS = "https://developer.apple.com/news/rss/news.rss"
 APPLE_SECURITY_PAGE = "https://support.apple.com/es-es/100100"
-APPLE_DEV_RELEASES_PAGE = "https://developer.apple.com/news/releases/"
 
 WEEKDAYS_ES = [
     "lunes", "martes", "miércoles", "jueves",
     "viernes", "sábado", "domingo"
 ]
 
+
+# -------------------------
+# Helpers base
+# -------------------------
 
 def now_utc():
     return datetime.now(timezone.utc)
@@ -47,7 +53,7 @@ def sha256(text):
 
 
 def http_get(url, timeout=25):
-    headers = {"User-Agent": "Mozilla/5.0 iOS-Radar/3.0"}
+    headers = {"User-Agent": "Mozilla/5.0 iOS-Radar/4.0"}
     r = requests.get(url, headers=headers, timeout=timeout)
     r.raise_for_status()
     return r.text
@@ -57,13 +63,14 @@ def default_state():
     return {
         "initialized": False,
         "seen_keys": [],
-        "hashes": {},
         "latest_security_version": None,
         "latest_ipsw_fingerprint": None,
         "last_summary_fingerprint": None,
         "last_stage_key": None,
         "last_run": None,
-        "event_history": []
+        "last_meaningful_run": None,
+        "event_history": [],
+        "last_estimation": {},
     }
 
 
@@ -74,11 +81,11 @@ def load_state():
         try:
             old = json.loads(STATE_FILE.read_text(encoding="utf-8"))
             state.update(old)
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"[WARN] No se pudo leer state.json: {e}")
 
-    # Migración desde script viejo
-    if "seen_events" in state and "seen_keys" not in state:
+    # Migraciones desde versiones anteriores
+    if "seen_events" in state and not state.get("seen_keys"):
         state["seen_keys"] = state.get("seen_events", [])
 
     for key, value in default_state().items():
@@ -87,11 +94,36 @@ def load_state():
     return state
 
 
-def save_state(state):
-    STATE_FILE.write_text(
-        json.dumps(state, indent=2, ensure_ascii=False),
+def save_json(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(data, indent=2, ensure_ascii=False),
         encoding="utf-8"
     )
+
+
+def save_state(state):
+    save_json(STATE_FILE, state)
+
+
+def save_web_state(state):
+    """
+    Estado público para el dashboard.
+
+    No incluye token, chat_id ni nada sensible.
+    """
+    public_state = {
+        "initialized": state.get("initialized"),
+        "latest_security_version": state.get("latest_security_version"),
+        "latest_ipsw_fingerprint": state.get("latest_ipsw_fingerprint"),
+        "last_run": state.get("last_run"),
+        "last_meaningful_run": state.get("last_meaningful_run"),
+        "last_stage_key": state.get("last_stage_key"),
+        "last_estimation": state.get("last_estimation", {}),
+        "event_history": state.get("event_history", [])[:80],
+    }
+
+    save_json(WEB_STATE_FILE, public_state)
 
 
 def send_telegram(message):
@@ -113,6 +145,10 @@ def send_telegram(message):
     r.raise_for_status()
 
 
+# -------------------------
+# Parsing
+# -------------------------
+
 def clean_title(title):
     return re.sub(r"\s+", " ", title or "").strip()
 
@@ -132,12 +168,14 @@ def parse_feed_datetime(entry):
         return None
 
 
-def format_date(dt):
-    if not dt:
-        return "fecha desconocida"
+def parse_iso_dt(value):
+    if not value:
+        return None
 
-    weekday = WEEKDAYS_ES[dt.weekday()]
-    return f"{weekday} {dt.day:02d}/{dt.month:02d}"
+    try:
+        return datetime.fromisoformat(value)
+    except Exception:
+        return None
 
 
 def days_since(dt):
@@ -148,10 +186,15 @@ def days_since(dt):
     return max(0, delta.total_seconds() / 86400)
 
 
-def extract_ios_version(text):
-    if not text:
-        return None
+def format_date(dt):
+    if not dt:
+        return "fecha desconocida"
 
+    weekday = WEEKDAYS_ES[dt.weekday()]
+    return f"{weekday} {dt.day:02d}/{dt.month:02d}"
+
+
+def extract_ios_version(text):
     patterns = [
         r"\biOS\s+([0-9]+(?:\.[0-9]+){0,2})",
         r"\biPadOS\s+([0-9]+(?:\.[0-9]+){0,2})",
@@ -159,7 +202,7 @@ def extract_ios_version(text):
     ]
 
     for pattern in patterns:
-        match = re.search(pattern, text, re.IGNORECASE)
+        match = re.search(pattern, text or "", re.IGNORECASE)
         if match:
             return match.group(1)
 
@@ -168,9 +211,7 @@ def extract_ios_version(text):
 
 def extract_beta_number(text):
     match = re.search(r"\bbeta\s*([0-9]+)", text or "", re.IGNORECASE)
-    if match:
-        return int(match.group(1))
-    return None
+    return int(match.group(1)) if match else None
 
 
 def extract_rc_number(text):
@@ -207,6 +248,10 @@ def classify_title(title):
     return "other"
 
 
+# -------------------------
+# Fuentes
+# -------------------------
+
 def fetch_rss_items(source_name, url):
     items = []
     feed = feedparser.parse(url)
@@ -220,15 +265,13 @@ def fetch_rss_items(source_name, url):
         if not re.search(r"\biOS\b|\biPadOS\b", title, re.IGNORECASE):
             continue
 
-        kind = classify_title(title)
-
         item = {
             "source": source_name,
             "title": title,
             "link": link,
             "published": published,
             "datetime": dt.isoformat(timespec="seconds") if dt else None,
-            "kind": kind,
+            "kind": classify_title(title),
             "version": extract_ios_version(title),
             "beta_number": extract_beta_number(title),
             "rc_number": extract_rc_number(title),
@@ -286,17 +329,11 @@ def fetch_ipsw_latest():
     }
 
 
-def fetch_page_hash():
-    html = http_get(APPLE_DEV_RELEASES_PAGE)
-    return sha256(html)
-
-
 def build_snapshot():
     errors = []
     rss_items = []
     security_version = None
     ipsw_latest = None
-    releases_page_hash = None
 
     try:
         rss_items.extend(fetch_rss_items("Apple Developer Releases", APPLE_DEV_RELEASES_RSS))
@@ -318,32 +355,20 @@ def build_snapshot():
     except Exception as e:
         errors.append(f"IPSW: {e}")
 
-    try:
-        releases_page_hash = fetch_page_hash()
-    except Exception as e:
-        errors.append(f"Página releases: {e}")
-
     rss_items.sort(key=lambda x: x.get("datetime") or "", reverse=True)
 
     return {
         "rss_items": rss_items,
         "security_version": security_version,
         "ipsw_latest": ipsw_latest,
-        "releases_page_hash": releases_page_hash,
         "errors": errors,
         "checked_at": now_iso(),
     }
 
 
-def parse_iso_dt(value):
-    if not value:
-        return None
-
-    try:
-        return datetime.fromisoformat(value)
-    except Exception:
-        return None
-
+# -------------------------
+# Detección y estado
+# -------------------------
 
 def detect_changes(snapshot, state):
     changes = []
@@ -351,14 +376,15 @@ def detect_changes(snapshot, state):
 
     for item in snapshot["rss_items"][:40]:
         if item["key"] not in seen_keys:
-            changes.append({
-                "type": "rss",
-                "kind": item["kind"],
-                "title": item["title"],
-                "version": item.get("version"),
-                "source": item["source"],
-                "key": item["key"],
-            })
+            if item["kind"] in ("beta", "rc", "public_possible"):
+                changes.append({
+                    "type": "rss",
+                    "kind": item["kind"],
+                    "title": item["title"],
+                    "version": item.get("version"),
+                    "source": item["source"],
+                    "key": item["key"],
+                })
 
     security_version = snapshot.get("security_version")
     if security_version and state.get("latest_security_version") != security_version:
@@ -382,29 +408,17 @@ def detect_changes(snapshot, state):
             "key": make_key("ipsw", ipsw["fingerprint"]),
         })
 
-    page_hash = snapshot.get("releases_page_hash")
-    old_hash = state.get("hashes", {}).get("apple_dev_releases_page")
-
-    if page_hash and old_hash and page_hash != old_hash:
-        changes.append({
-            "type": "page_hash",
-            "kind": "page_change",
-            "title": "Cambio en Apple Developer Releases",
-            "version": None,
-            "source": "Apple Developer",
-            "key": make_key("apple_dev_releases_page", page_hash),
-        })
-
     return changes
 
 
-def update_state_from_snapshot(snapshot, state, changes=None):
+def update_state_from_snapshot(snapshot, state, changes=None, meaningful=False, update_scan_time=True):
     changes = changes or []
 
     for change in changes:
         if change.get("key"):
             state["seen_keys"].append(change["key"])
 
+    # Marcar entradas RSS como vistas para evitar spam histórico.
     for item in snapshot["rss_items"][:60]:
         state["seen_keys"].append(item["key"])
 
@@ -417,24 +431,20 @@ def update_state_from_snapshot(snapshot, state, changes=None):
     if ipsw:
         state["latest_ipsw_fingerprint"] = ipsw["fingerprint"]
 
-    page_hash = snapshot.get("releases_page_hash")
-    if page_hash:
-        state.setdefault("hashes", {})
-        state["hashes"]["apple_dev_releases_page"] = page_hash
-
     history = state.get("event_history", [])
 
     for item in snapshot["rss_items"][:60]:
-        history.append({
-            "key": item["key"],
-            "source": item["source"],
-            "title": item["title"],
-            "kind": item["kind"],
-            "version": item.get("version"),
-            "beta_number": item.get("beta_number"),
-            "rc_number": item.get("rc_number"),
-            "datetime": item.get("datetime"),
-        })
+        if item.get("kind") in ("beta", "rc", "public_possible"):
+            history.append({
+                "key": item["key"],
+                "source": item["source"],
+                "title": item["title"],
+                "kind": item["kind"],
+                "version": item.get("version"),
+                "beta_number": item.get("beta_number"),
+                "rc_number": item.get("rc_number"),
+                "datetime": item.get("datetime"),
+            })
 
     dedup = {}
     for item in history:
@@ -445,7 +455,13 @@ def update_state_from_snapshot(snapshot, state, changes=None):
     history.sort(key=lambda x: x.get("datetime") or "", reverse=True)
 
     state["event_history"] = history[:500]
-    state["last_run"] = now_iso()
+
+    if update_scan_time:
+        state["last_run"] = snapshot["checked_at"]
+
+    if meaningful:
+        state["last_meaningful_run"] = snapshot["checked_at"]
+
     state["initialized"] = True
 
 
@@ -506,10 +522,15 @@ def average_beta_cadence(events, version):
     return sum(deltas) / len(deltas)
 
 
+# -------------------------
+# Estimación
+# -------------------------
+
 def probable_window(min_days, max_days):
     today = now_utc().date()
     dates = [today + timedelta(days=i) for i in range(min_days, max_days + 1)]
 
+    # Apple suele publicar mucho lunes/martes/miércoles.
     preferred = [d for d in dates if d.weekday() in (0, 1, 2)]
 
     if not preferred:
@@ -538,8 +559,7 @@ def compact_changes(changes):
     public_count = sum(1 for c in changes if c["kind"] == "public")
     rc_count = sum(1 for c in changes if c["kind"] == "rc")
     beta_count = sum(1 for c in changes if c["kind"] == "beta")
-    page_count = sum(1 for c in changes if c["kind"] == "page_change")
-    other_count = len(changes) - public_count - rc_count - beta_count - page_count
+    possible_public_count = sum(1 for c in changes if c["kind"] == "public_possible")
 
     parts = []
 
@@ -552,11 +572,8 @@ def compact_changes(changes):
     if beta_count:
         parts.append(f"{beta_count} beta")
 
-    if page_count:
-        parts.append(f"{page_count} cambio en página oficial")
-
-    if other_count:
-        parts.append(f"{other_count} señal adicional")
+    if possible_public_count:
+        parts.append(f"{possible_public_count} entrada pública posible")
 
     return ", ".join(parts)
 
@@ -588,20 +605,7 @@ def calculate_estimation(snapshot, state, changes):
         reasons.append("ha cambiado Apple Security o ha aparecido un IPSW firmado")
         stage_key = f"public:{security_version}:{ipsw['fingerprint'] if ipsw else ''}"
 
-        return {
-            "score": score,
-            "level": level,
-            "eta": eta,
-            "window": window,
-            "recommendation": recommendation,
-            "reasons": reasons,
-            "stage_key": stage_key,
-            "latest_rc": latest_rc,
-            "latest_beta": latest_beta,
-            "beta_cadence": None,
-        }
-
-    if latest_rc:
+    elif latest_rc:
         rc_dt = parse_iso_dt(latest_rc.get("datetime"))
         rc_days = days_since(rc_dt)
         rc_num = latest_rc.get("rc_number") or 1
@@ -621,7 +625,7 @@ def calculate_estimation(snapshot, state, changes):
             level = "ALTA"
             eta = "aprox. 2-7 días" if rc_num == 1 else "aprox. 1-4 días"
             window = probable_window(1, 7 if rc_num == 1 else 4)
-            recommendation = "Preavisaría: es razonable decir que puede caer esta semana."
+            recommendation = "Preavisaría: puede caer esta semana."
             reasons.append(f"la RC salió hace {rc_days:.1f} días")
             stage_key = f"rc:{version}:fresh"
 
@@ -641,7 +645,7 @@ def calculate_estimation(snapshot, state, changes):
             level = "ALTA PERO RARA"
             eta = "podría caer en cualquier momento, pero la RC ya empieza a ser vieja"
             window = probable_window(0, 4)
-            recommendation = "Avisaría con cautela: probable, pero algo se puede haber retrasado."
+            recommendation = "Avisaría con cautela: probable, pero puede haberse retrasado."
             reasons.append(f"la RC tiene {rc_days:.1f} días")
             stage_key = f"rc:{version}:old"
 
@@ -651,33 +655,21 @@ def calculate_estimation(snapshot, state, changes):
             eta = "incierta"
             window = "la RC es antigua; esperaría nueva RC o señal pública"
             recommendation = "No daría aviso fuerte todavía."
-            reasons.append(f"la RC tiene {rc_days:.1f} días, demasiado para considerarla inminente")
+            reasons.append(f"la RC tiene {rc_days:.1f} días")
             stage_key = f"rc:{version}:stale"
 
-        return {
-            "score": score,
-            "level": level,
-            "eta": eta,
-            "window": window,
-            "recommendation": recommendation,
-            "reasons": reasons,
-            "stage_key": stage_key,
-            "latest_rc": latest_rc,
-            "latest_beta": latest_beta,
-            "beta_cadence": None,
-        }
-
-    if latest_beta:
+    elif latest_beta:
         beta_dt = parse_iso_dt(latest_beta.get("datetime"))
         beta_days = days_since(beta_dt)
         beta_num = latest_beta.get("beta_number")
         version = latest_beta.get("version")
         cadence = average_beta_cadence(events, version)
 
-        if cadence:
-            cadence_text = f"ritmo medio de betas: {cadence:.1f} días"
-        else:
-            cadence_text = "ritmo medio de betas: todavía sin datos suficientes"
+        cadence_text = (
+            f"ritmo medio de betas: {cadence:.1f} días"
+            if cadence else
+            "ritmo medio de betas: todavía sin datos suficientes"
+        )
 
         if beta_days is None:
             score = 30
@@ -686,6 +678,7 @@ def calculate_estimation(snapshot, state, changes):
             window = "esperaría más señales"
             recommendation = "Solo seguimiento, sin preaviso fuerte."
             reasons.append("hay beta, pero sin fecha clara")
+            stage_key = f"beta:{version}:unknown"
 
         else:
             next_beta_min = max(0, int(5 - beta_days))
@@ -696,7 +689,7 @@ def calculate_estimation(snapshot, state, changes):
                 level = "MEDIA-ALTA"
                 eta = "posible nueva beta/RC en 0-7 días; final aún no confirmada"
                 window = probable_window(0, 7)
-                recommendation = "Yo daría solo preaviso suave: el ciclo está avanzado, pero falta RC."
+                recommendation = "Daría solo preaviso suave: ciclo avanzado, pero falta RC."
                 reasons.append(f"beta {beta_num} detectada hace {beta_days:.1f} días")
                 reasons.append(cadence_text)
                 stage_key = f"beta:{version}:{beta_num}:advanced"
@@ -721,30 +714,6 @@ def calculate_estimation(snapshot, state, changes):
                 reasons.append(cadence_text)
                 stage_key = f"beta:{version}:{beta_num}:fresh"
 
-        return {
-            "score": score,
-            "level": level,
-            "eta": eta,
-            "window": window,
-            "recommendation": recommendation,
-            "reasons": reasons,
-            "stage_key": stage_key,
-            "latest_rc": latest_rc,
-            "latest_beta": latest_beta,
-            "beta_cadence": cadence,
-        }
-
-    page_change = any(c.get("kind") == "page_change" for c in changes)
-
-    if page_change:
-        score = 25
-        level = "BAJA-MEDIA"
-        eta = "sin días claros"
-        window = "requiere más señales"
-        recommendation = "No avisaría todavía; solo vigilaría."
-        reasons.append("ha cambiado una página oficial, pero no necesariamente por iOS")
-        stage_key = "page-change"
-
     return {
         "score": score,
         "level": level,
@@ -755,7 +724,6 @@ def calculate_estimation(snapshot, state, changes):
         "stage_key": stage_key,
         "latest_rc": latest_rc,
         "latest_beta": latest_beta,
-        "beta_cadence": None,
     }
 
 
@@ -821,11 +789,9 @@ def should_send_alert(snapshot, changes, state, manual=False):
     if manual:
         return True
 
-    # Evita spam: los cambios de hash de páginas HTML pueden ser ruido.
-    # Solo avisamos por señales reales: beta, RC, IPSW o Apple Security.
     meaningful_changes = [
         c for c in changes
-        if c.get("kind") != "page_change"
+        if c.get("kind") in ("beta", "rc", "public", "public_possible")
     ]
 
     estimation = calculate_estimation(snapshot, state, meaningful_changes)
@@ -839,18 +805,37 @@ def should_send_alert(snapshot, changes, state, manual=False):
     return has_meaningful_changes or (stage_changed and strong_stage)
 
 
-def run_once(manual_summary=False):
+# -------------------------
+# Ejecución
+# -------------------------
+
+def run_once(manual_summary=False, github_mode=False):
     state = load_state()
     snapshot = build_snapshot()
     changes = detect_changes(snapshot, state)
+
+    meaningful_changes = [
+        c for c in changes
+        if c.get("kind") in ("beta", "rc", "public", "public_possible")
+    ]
+
     first_run = not state.get("initialized", False)
 
     if first_run:
-        update_state_from_snapshot(snapshot, state, changes=changes)
-        estimation = calculate_estimation(snapshot, state, [])
+        update_state_from_snapshot(
+            snapshot,
+            state,
+            changes=changes,
+            meaningful=False,
+            update_scan_time=True,
+        )
 
+        estimation = calculate_estimation(snapshot, state, [])
         state["last_stage_key"] = estimation["stage_key"]
+        state["last_estimation"] = estimation
+
         save_state(state)
+        save_web_state(state)
 
         print(f"[{now_iso()}] Primer arranque: baseline guardada sin spam.")
         print(f"[{now_iso()}] Señales iniciales ignoradas: {len(changes)}")
@@ -858,26 +843,56 @@ def run_once(manual_summary=False):
         if manual_summary:
             send_telegram(format_summary(snapshot, [], state, manual=True))
 
-        return
+        return True
 
-    if should_send_alert(snapshot, changes, state, manual=manual_summary):
-        summary = format_summary(snapshot, changes, state, manual=manual_summary)
+    estimation = calculate_estimation(snapshot, state, meaningful_changes)
+    state["last_estimation"] = estimation
+
+    sent = False
+
+    if should_send_alert(snapshot, meaningful_changes, state, manual=manual_summary):
+        summary = format_summary(snapshot, meaningful_changes, state, manual=manual_summary)
         fingerprint = sha256(summary)
 
         if manual_summary or fingerprint != state.get("last_summary_fingerprint"):
             send_telegram(summary)
             state["last_summary_fingerprint"] = fingerprint
-            print(f"[{now_iso()}] Resumen enviado. Cambios: {len(changes)}")
+            sent = True
+            print(f"[{now_iso()}] Resumen enviado. Cambios: {len(meaningful_changes)}")
         else:
             print(f"[{now_iso()}] Resumen duplicado no enviado.")
     else:
         print(f"[{now_iso()}] Sin cambios relevantes.")
 
-    estimation = calculate_estimation(snapshot, state, changes)
-    state["last_stage_key"] = estimation["stage_key"]
+    # Modo normal LXC:
+    # Guarda siempre para que dashboard local muestre último scan.
+    #
+    # Modo GitHub:
+    # No guarda cada 15 minutos para evitar 96 commits/día.
+    # Solo guarda si hay cambios reales, alerta enviada o resumen manual.
+    should_save = (
+        not github_mode
+        or bool(meaningful_changes)
+        or manual_summary
+        or sent
+    )
 
-    update_state_from_snapshot(snapshot, state, changes=changes)
-    save_state(state)
+    if should_save:
+        update_state_from_snapshot(
+            snapshot,
+            state,
+            changes=changes,
+            meaningful=bool(meaningful_changes) or sent,
+            update_scan_time=True,
+        )
+        state["last_stage_key"] = estimation["stage_key"]
+        state["last_estimation"] = estimation
+
+        save_state(state)
+        save_web_state(state)
+        return True
+
+    return False
 
 
 def test_telegram():
@@ -888,6 +903,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--once", action="store_true", help="Comprueba una vez y sale")
     parser.add_argument("--summary", action="store_true", help="Envía resumen manual y sale")
+    parser.add_argument("--github", action="store_true", help="Modo GitHub Actions")
     parser.add_argument("--test-telegram", action="store_true", help="Envía mensaje de prueba")
     args = parser.parse_args()
 
@@ -895,14 +911,19 @@ def main():
         test_telegram()
         return
 
+    if args.github:
+        changed = run_once(manual_summary=False, github_mode=True)
+        print(f"[{now_iso()}] GitHub mode. Files changed: {changed}")
+        return
+
     if args.once or args.summary:
-        run_once(manual_summary=args.summary)
+        run_once(manual_summary=args.summary, github_mode=False)
         return
 
     print("iOS Radar iniciado.")
 
     while True:
-        run_once(manual_summary=False)
+        run_once(manual_summary=False, github_mode=False)
         time.sleep(CHECK_INTERVAL_SECONDS)
 
 
