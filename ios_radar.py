@@ -5,6 +5,7 @@ import json
 import time
 import argparse
 import hashlib
+import html
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 
@@ -139,6 +140,9 @@ def send_telegram(message):
         "text": message,
         "parse_mode": "HTML",
         "disable_web_page_preview": True,
+        "link_preview_options": {
+            "is_disabled": True
+        },
     }
 
     r = requests.post(url, json=payload, timeout=25)
@@ -383,6 +387,7 @@ def detect_changes(snapshot, state):
                     "title": item["title"],
                     "version": item.get("version"),
                     "source": item["source"],
+                    "link": item.get("link", ""),
                     "key": item["key"],
                 })
 
@@ -394,6 +399,7 @@ def detect_changes(snapshot, state):
             "title": f"Apple Security marca iOS/iPadOS {security_version}",
             "version": security_version,
             "source": "Apple Security",
+            "link": APPLE_SECURITY_PAGE,
             "key": make_key("security", security_version),
         })
 
@@ -405,6 +411,7 @@ def detect_changes(snapshot, state):
             "title": f"IPSW firmado iOS {ipsw['version']} build {ipsw['buildid']}",
             "version": ipsw["version"],
             "source": "IPSW",
+            "link": f"https://ipsw.me/download/{IPSW_DEVICE}/{ipsw['version']}",
             "key": make_key("ipsw", ipsw["fingerprint"]),
         })
 
@@ -556,27 +563,44 @@ def compact_changes(changes):
     if not changes:
         return "sin señales nuevas"
 
-    public_count = sum(1 for c in changes if c["kind"] == "public")
-    rc_count = sum(1 for c in changes if c["kind"] == "rc")
-    beta_count = sum(1 for c in changes if c["kind"] == "beta")
-    possible_public_count = sum(1 for c in changes if c["kind"] == "public_possible")
+    def count_kind(kind):
+        return sum(1 for c in changes if c.get("kind") == kind)
+
+    def first_link(kind):
+        for c in changes:
+            if c.get("kind") == kind and c.get("link"):
+                return c["link"]
+        return ""
+
+    def linked(text_value, url):
+        safe_text = html.escape(text_value)
+        safe_url = html.escape(url or "", quote=True)
+
+        if safe_url:
+            return f'<a href="{safe_url}">{safe_text}</a>'
+
+        return safe_text
 
     parts = []
 
+    public_count = count_kind("public")
+    rc_count = count_kind("rc")
+    beta_count = count_kind("beta")
+    possible_public_count = count_kind("public_possible")
+
     if public_count:
-        parts.append(f"{public_count} señal pública/final")
+        parts.append(linked(f"{public_count} señal pública/final", first_link("public")))
 
     if rc_count:
-        parts.append(f"{rc_count} RC")
+        parts.append(linked(f"{rc_count} RC", first_link("rc")))
 
     if beta_count:
-        parts.append(f"{beta_count} beta")
+        parts.append(linked(f"{beta_count} beta", first_link("beta")))
 
     if possible_public_count:
-        parts.append(f"{possible_public_count} entrada pública posible")
+        parts.append(linked(f"{possible_public_count} entrada pública posible", first_link("public_possible")))
 
     return ", ".join(parts)
-
 
 def calculate_estimation(snapshot, state, changes):
     events = combined_events(snapshot, state)
