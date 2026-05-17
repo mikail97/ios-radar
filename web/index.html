@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>iOS Radar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <p class="eyebrow">iOS Radar</p>
+        <h1>Update Watch</h1>
+      </div>
+
+      <div class="live">
+        <span></span>
+        Live
+      </div>
+    </header>
+
+    <section class="status-card">
+      <p class="label">Estado actual</p>
+      <div id="status" class="status-low">Cargando…</div>
+      <p id="estimate" class="estimate">Leyendo último scan</p>
+
+      <div class="main-metric">
+        <span>Ventana probable</span>
+        <strong id="window">—</strong>
+      </div>
+    </section>
+
+    <section class="quick-row">
+      <div>
+        <span>Puntuación</span>
+        <strong id="score">—</strong>
+      </div>
+
+      <div>
+        <span>Último scan</span>
+        <strong id="lastRun">—</strong>
+      </div>
+    </section>
+
+    <section class="ios-list">
+      <div class="list-title">Señales</div>
+
+      <div class="list-item">
+        <div>
+          <span class="icon">RC</span>
+          <p>Release Candidate</p>
+        </div>
+        <strong id="lastRc">—</strong>
+      </div>
+
+      <div class="list-item">
+        <div>
+          <span class="icon beta">β</span>
+          <p>Beta</p>
+        </div>
+        <strong id="lastBeta">—</strong>
+      </div>
+
+      <div class="list-item">
+        <div>
+          <span class="icon apple">AS</span>
+          <p>Apple Security</p>
+        </div>
+        <strong id="security">—</strong>
+      </div>
+
+      <div class="list-item">
+        <div>
+          <span class="icon ipsw">IP</span>
+          <p>IPSW firmado</p>
+        </div>
+        <strong id="ipsw">—</strong>
+      </div>
+    </section>
+
+    <section class="history-section">
+      <div class="history-head">
+        <h2>Historial</h2>
+        <p>Últimas señales detectadas</p>
+      </div>
+
+      <div id="history" class="history">Sin datos todavía.</div>
+    </section>
+
+    <footer>
+      Auto-refresh cada 60s · Solo lectura
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

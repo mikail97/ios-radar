@@ -1,0 +1,248 @@
+{
+  "initialized": true,
+  "seen_keys": [
+    "93ed50f8257dfc18a2302d757cc581ed062e05c820df69bf1016e1d8f019ebb2",
+    "61db36ec45a1a58141180a17a6888b126788d6fac863e85fbfb20fca77374759",
+    "747c69a6223b26a167eb5c0aedc863bf586c5e05d8b2f9adf05105f41cdfe1bb",
+    "ac70cb9bad2f16962c4491ead47ec221027842371a3beaab684c38f92e8603d3",
+    "2d5a28311a86f6200341436c2bed68e8d15030ff1f7a00ee9bc9d22dd493aaa0",
+    "bf35e0eec0782dd858b19cadba5beb063186e6296030bfc9ffeb9fcae9d55dce",
+    "ff9b9abc83e4d18d6ca151eba44f7c7697d37836cffbca3b95ace661cd30c8af",
+    "d1a5a5b7f1e43a24f915ba45028b9b84cfcb9a6bc945ed87fdaf8b4d111ac05e",
+    "972766a0b7b60fdf934ea3985a514b00f09f401d7079ae23a7dd94400ffa260d",
+    "226be657ff3257adedd8d9e5af6e74e21cae511a4a8dc7fb9c3e1c844b15506d",
+    "10632060cb84dbb7470f36c398f12a459ca0d55374414f248f8541120aa50b0e",
+    "77e9290aa33a5b18f8a0f8bc65c033f708a7d370b60b22a3e50a84971f4629da",
+    "3fc237c465d6debf911b2fcb817d8030e28f9c8aaa7a33f11d7e857792610487",
+    "21afa50f7f138dbcb8af09a5909e23a6a5eee2c7abad7306b6311bd6dab0997b",
+    "0ad3af880a2181d89be6cf4f2914046f31f0ea6f286ced52fe7b241f7a77589a",
+    "3d71c7ab7da4cbf842c0983fa30f1634f86053243093bbcb4ec7ba98b54b9e29",
+    "86f984f1a2817fd6804e91669b31f3db2534678799b0884d954801ebedd812d2",
+    "c0b0f471aac48d9c131732710808b8aefc465efd702f12a0738a2df7ae7abd16",
+    "5949a12a427656d3a1e26819043c693ac4d315b77209c81bd1cca2589128ce40",
+    "bbb8f8c66d3c6f5e1af1ce9c4496d808f3eb107cf239ad51b0db6d7399010114",
+    "5d7d8fada7e2750bfbfa489f4b008b401f546efd4571d08a8f3921c820894389",
+    "8337ba1a6b1f4252afabf9b3c9c188b26e05431de6d82e172694b0ed4b3360eb",
+    "a6e5246a615f5379757ef6aa8d92eae3a01e0aecffaaf14844c6d3129ed5c06e",
+    "c133a68206ffebf576bac3eba82cff069eca2bcac979bce9cc37d751c80ef5ba",
+    "ae3dd2e674ab27bf4591e49b1d3b49d068058e830803dffad472773331685ab3",
+    "076a96233fc6957750fd65bc955e1ec853ceae1421dbd23bda0676c69b9b5567",
+    "535d5959d996e7d9ca2466af814bf208f748ced652861c5b51191f2c6ea84209",
+    "1501b5a54a5dccf48278e88b9441bbd00cd80310ec8967af15c764ee45e03422",
+    "1edcf4e0fe2ef81646e5235a6af8c4ab8ce150a7a630576c6560072bfff9e8f6",
+    "a5196676237d56b5c9d935c989cc533b7a1a1faa234b6d9cef5ef264891aa255",
+    "a5939fdbc03df9297b35bb1fc93ef4e83f2f44f98c3025dd1df8d8235962ba05",
+    "ea3dd6b63496fd8189cd4616408e3c2b50cfa009d81b90ce40db3da257e552cb",
+    "809d303311beeb7b0ce4b22c3b61d107abee5c9d360ca1763abba0cbf60e911b"
+  ],
+  "hashes": {
+    "apple_dev_releases_page": "1c51d323f146990d834533b66c298d485e45e250eed2ba3000cff3d36e8e92c6"
+  },
+  "latest_security_version": null,
+  "latest_ipsw_fingerprint": "26.5-23F77",
+  "last_summary_fingerprint": "bfe859986e29533c8866f0641784a81558fa36b49a7c99b73ef71d52ff2adcb5",
+  "last_stage_key": "page-change",
+  "last_run": "2026-05-17T13:45:04+00:00",
+  "event_history": [
+    {
+      "key": "10632060cb84dbb7470f36c398f12a459ca0d55374414f248f8541120aa50b0e",
+      "source": "Apple Developer Releases",
+      "title": "iOS 26.5 (23F77)",
+      "kind": "public_possible",
+      "version": "26.5",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-05-11T17:00:00+00:00"
+    },
+    {
+      "key": "77e9290aa33a5b18f8a0f8bc65c033f708a7d370b60b22a3e50a84971f4629da",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 26.5 (23F77)",
+      "kind": "public_possible",
+      "version": "26.5",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-05-11T17:00:00+00:00"
+    },
+    {
+      "key": "3fc237c465d6debf911b2fcb817d8030e28f9c8aaa7a33f11d7e857792610487",
+      "source": "Apple Developer Releases",
+      "title": "iOS 18.7.9 (22H355)",
+      "kind": "public_possible",
+      "version": "18.7.9",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-05-11T17:00:00+00:00"
+    },
+    {
+      "key": "21afa50f7f138dbcb8af09a5909e23a6a5eee2c7abad7306b6311bd6dab0997b",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 18.7.9 (22H355)",
+      "kind": "public_possible",
+      "version": "18.7.9",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-05-11T17:00:00+00:00"
+    },
+    {
+      "key": "0ad3af880a2181d89be6cf4f2914046f31f0ea6f286ced52fe7b241f7a77589a",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 17.7.11 (21H461)",
+      "kind": "public_possible",
+      "version": "17.7.11",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-05-11T17:00:00+00:00"
+    },
+    {
+      "key": "3d71c7ab7da4cbf842c0983fa30f1634f86053243093bbcb4ec7ba98b54b9e29",
+      "source": "Apple Developer Releases",
+      "title": "iOS 16.7.16 (20H392)",
+      "kind": "public_possible",
+      "version": "16.7.16",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-05-11T17:00:00+00:00"
+    },
+    {
+      "key": "86f984f1a2817fd6804e91669b31f3db2534678799b0884d954801ebedd812d2",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 16.7.16 (20H392)",
+      "kind": "public_possible",
+      "version": "16.7.16",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-05-11T17:00:00+00:00"
+    },
+    {
+      "key": "c0b0f471aac48d9c131732710808b8aefc465efd702f12a0738a2df7ae7abd16",
+      "source": "Apple Developer Releases",
+      "title": "iOS 15.8.8 (19H422)",
+      "kind": "public_possible",
+      "version": "15.8.8",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-05-11T17:00:00+00:00"
+    },
+    {
+      "key": "5949a12a427656d3a1e26819043c693ac4d315b77209c81bd1cca2589128ce40",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 15.8.8 (19H422)",
+      "kind": "public_possible",
+      "version": "15.8.8",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-05-11T17:00:00+00:00"
+    },
+    {
+      "key": "93ed50f8257dfc18a2302d757cc581ed062e05c820df69bf1016e1d8f019ebb2",
+      "source": "Apple Developer Releases",
+      "title": "iOS 26.4.2 (23E261)",
+      "kind": "public_possible",
+      "version": "26.4.2",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-04-22T17:00:00+00:00"
+    },
+    {
+      "key": "61db36ec45a1a58141180a17a6888b126788d6fac863e85fbfb20fca77374759",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 26.4.2 (23E261)",
+      "kind": "public_possible",
+      "version": "26.4.2",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-04-22T17:00:00+00:00"
+    },
+    {
+      "key": "d1a5a5b7f1e43a24f915ba45028b9b84cfcb9a6bc945ed87fdaf8b4d111ac05e",
+      "source": "Apple Developer News",
+      "title": "Adjustments to the China storefront of the App Store on iOS and iPadOS",
+      "kind": "other",
+      "version": null,
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-03-13T01:00:21+00:00"
+    },
+    {
+      "key": "ac70cb9bad2f16962c4491ead47ec221027842371a3beaab684c38f92e8603d3",
+      "source": "Apple Developer Releases",
+      "title": "iOS 16.7.15 (20H380)",
+      "kind": "public_possible",
+      "version": "16.7.15",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-03-11T21:00:00+00:00"
+    },
+    {
+      "key": "2d5a28311a86f6200341436c2bed68e8d15030ff1f7a00ee9bc9d22dd493aaa0",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 16.7.15 (20H380)",
+      "kind": "public_possible",
+      "version": "16.7.15",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-03-11T21:00:00+00:00"
+    },
+    {
+      "key": "bf35e0eec0782dd858b19cadba5beb063186e6296030bfc9ffeb9fcae9d55dce",
+      "source": "Apple Developer Releases",
+      "title": "iOS 15.8.7 (19H411)",
+      "kind": "public_possible",
+      "version": "15.8.7",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-03-11T21:00:00+00:00"
+    },
+    {
+      "key": "ff9b9abc83e4d18d6ca151eba44f7c7697d37836cffbca3b95ace661cd30c8af",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 15.8.7 (19H411)",
+      "kind": "public_possible",
+      "version": "15.8.7",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-03-11T21:00:00+00:00"
+    },
+    {
+      "key": "972766a0b7b60fdf934ea3985a514b00f09f401d7079ae23a7dd94400ffa260d",
+      "source": "Apple Developer Releases",
+      "title": "iOS 12.5.8 (16H88)",
+      "kind": "public_possible",
+      "version": "12.5.8",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-01-26T17:00:00+00:00"
+    },
+    {
+      "key": "226be657ff3257adedd8d9e5af6e74e21cae511a4a8dc7fb9c3e1c844b15506d",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 12.5.8 (16H88)",
+      "kind": "public_possible",
+      "version": "12.5.8",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-01-26T17:00:00+00:00"
+    },
+    {
+      "key": "747c69a6223b26a167eb5c0aedc863bf586c5e05d8b2f9adf05105f41cdfe1bb",
+      "source": "Apple Developer News",
+      "title": "Changes to iOS in Japan",
+      "kind": "other",
+      "version": null,
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2025-12-17T23:00:21+00:00"
+    },
+    {
+      "key": "8337ba1a6b1f4252afabf9b3c9c188b26e05431de6d82e172694b0ed4b3360eb",
+      "source": "Apple Developer News",
+      "title": "iOS and iPadOS 26 design kits are here",
+      "kind": "public_possible",
+      "version": "26",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2025-07-18T17:00:15+00:00"
+    }
+  ]
+}
