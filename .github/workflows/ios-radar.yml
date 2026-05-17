@@ -1,0 +1,50 @@
+name: iOS Radar
+
+on:
+  schedule:
+    - cron: "0,15,30,45 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run iOS Radar
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          IPSW_DEVICE: iPhone16,2
+        run: |
+          python ios_radar.py --github
+
+      - name: Commit updated state only if changed
+        run: |
+          git config user.name "ios-radar-bot"
+          git config user.email "ios-radar-bot@users.noreply.github.com"
+
+          git add state.json web/state.json
+
+          if git diff --cached --quiet; then
+            echo "No important state changes. No commit."
+          else
+            git commit -m "Update iOS Radar state"
+            git push
+          fi
