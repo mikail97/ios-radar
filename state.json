@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.5-23F77",
-  "last_run": "2026-05-26T18:40:13+00:00",
-  "last_meaningful_run": "2026-05-26T18:40:13+00:00",
+  "last_run": "2026-05-26T20:34:04+00:00",
+  "last_meaningful_run": "2026-05-26T20:34:04+00:00",
   "last_stage_key": "beta:26.6:None:fresh",
   "last_estimation": {
     "score": 30,
@@ -18,16 +18,14 @@
     "stage_key": "beta:26.6:None:fresh",
     "latest_rc": null,
     "latest_beta": {
+      "key": "ac454bfb3f3ac83da8f0c58e900bf5ee068624e58b1d4c0e6876669d2e960883",
       "source": "Apple Developer Releases",
       "title": "iOS 26.6 beta (23G5028e)",
-      "link": "https://developer.apple.com/news/releases/?id=05262026a",
-      "published": "Tue, 26 May 2026 10:00:00 PDT",
-      "datetime": "2026-05-26T17:00:00+00:00",
       "kind": "beta",
       "version": "26.6",
       "beta_number": null,
       "rc_number": null,
-      "key": "ac454bfb3f3ac83da8f0c58e900bf5ee068624e58b1d4c0e6876669d2e960883"
+      "datetime": "2026-05-26T17:00:00+00:00"
     }
   },
   "event_history": [
