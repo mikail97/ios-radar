@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.5-23F77",
-  "last_run": "2026-05-30T11:08:51+00:00",
-  "last_meaningful_run": "2026-05-30T11:08:51+00:00",
+  "last_run": "2026-05-30T12:14:06+00:00",
+  "last_meaningful_run": "2026-05-30T12:14:06+00:00",
   "last_stage_key": "beta:26.6:None:fresh",
   "last_estimation": {
     "score": 30,
