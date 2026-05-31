@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.5-23F77",
-  "last_run": "2026-05-31T04:50:27+00:00",
-  "last_meaningful_run": "2026-05-31T04:50:27+00:00",
+  "last_run": "2026-05-31T08:00:10+00:00",
+  "last_meaningful_run": "2026-05-31T08:00:10+00:00",
   "last_stage_key": "beta:26.6:None:fresh",
   "last_estimation": {
     "score": 30,
@@ -12,7 +12,7 @@
     "window": "entre lunes 01/06 y miércoles 03/06, sobre las 19:00 España",
     "recommendation": "No avisaría todavía; solo hay ciclo beta activo.",
     "reasons": [
-      "última beta hace 4.5 días",
+      "última beta hace 4.6 días",
       "ritmo medio de betas: todavía sin datos suficientes"
     ],
     "stage_key": "beta:26.6:None:fresh",
