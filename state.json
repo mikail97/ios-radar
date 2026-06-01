@@ -2,17 +2,17 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.5-23F77",
-  "last_run": "2026-06-01T12:28:41+00:00",
-  "last_meaningful_run": "2026-06-01T12:28:41+00:00",
+  "last_run": "2026-06-01T18:23:12+00:00",
+  "last_meaningful_run": "2026-06-01T18:23:12+00:00",
   "last_stage_key": "beta:26.6:None:next-soon",
   "last_estimation": {
     "score": 42,
     "level": "MEDIA",
-    "eta": "posible nueva beta en 0-3 días",
+    "eta": "posible nueva beta en 0-2 días",
     "window": "entre lunes 01/06 y miércoles 03/06, sobre las 19:00 España",
     "recommendation": "Seguimiento. Todavía no avisaría como update final cercano.",
     "reasons": [
-      "última beta hace 5.8 días",
+      "última beta hace 6.1 días",
       "ritmo medio de betas: todavía sin datos suficientes"
     ],
     "stage_key": "beta:26.6:None:next-soon",
@@ -29,6 +29,16 @@
     }
   },
   "event_history": [
+    {
+      "key": "3eb29983e0d0a125865cfb9cb03c224566a6e2105371a66892cded7d2552931a",
+      "source": "Apple Developer Releases",
+      "title": "iOS 26.5.1 (23F81)",
+      "kind": "public_possible",
+      "version": "26.5.1",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-06-01T17:00:00+00:00"
+    },
     {
       "key": "ac454bfb3f3ac83da8f0c58e900bf5ee068624e58b1d4c0e6876669d2e960883",
       "source": "Apple Developer Releases",
