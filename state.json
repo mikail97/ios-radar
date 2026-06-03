@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.5-23F77",
-  "last_run": "2026-06-03T16:05:04+00:00",
-  "last_meaningful_run": "2026-06-03T16:05:04+00:00",
+  "last_run": "2026-06-03T19:57:09+00:00",
+  "last_meaningful_run": "2026-06-03T19:57:09+00:00",
   "last_stage_key": "beta:26.6:None:next-soon",
   "last_estimation": {
     "score": 42,
@@ -12,7 +12,7 @@
     "window": "miércoles 03/06, sobre las 19:00 España",
     "recommendation": "Seguimiento. Todavía no avisaría como update final cercano.",
     "reasons": [
-      "última beta hace 8.0 días",
+      "última beta hace 8.1 días",
       "ritmo medio de betas: todavía sin datos suficientes"
     ],
     "stage_key": "beta:26.6:None:next-soon",
