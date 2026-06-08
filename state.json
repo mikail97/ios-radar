@@ -2,33 +2,55 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.5-23F77",
-  "last_run": "2026-06-08T17:42:38+00:00",
-  "last_meaningful_run": "2026-06-08T17:42:38+00:00",
-  "last_stage_key": "beta:26.6:None:next-soon",
+  "last_run": "2026-06-08T19:51:24+00:00",
+  "last_meaningful_run": "2026-06-08T19:51:24+00:00",
+  "last_stage_key": "beta:27:None:fresh",
   "last_estimation": {
-    "score": 42,
-    "level": "MEDIA",
-    "eta": "posible nueva beta en 0-1 días",
-    "window": "entre lunes 08/06 y martes 09/06, sobre las 19:00 España",
-    "recommendation": "Seguimiento. Todavía no avisaría como update final cercano.",
+    "score": 30,
+    "level": "MEDIA-BAJA",
+    "eta": "posible nueva beta en 4-8 días",
+    "window": "entre lunes 15/06 y martes 16/06, sobre las 19:00 España",
+    "recommendation": "No avisaría todavía; solo hay ciclo beta activo.",
     "reasons": [
-      "última beta hace 13.0 días",
+      "última beta hace 0.1 días",
       "ritmo medio de betas: todavía sin datos suficientes"
     ],
-    "stage_key": "beta:26.6:None:next-soon",
+    "stage_key": "beta:27:None:fresh",
     "latest_rc": null,
     "latest_beta": {
-      "key": "ac454bfb3f3ac83da8f0c58e900bf5ee068624e58b1d4c0e6876669d2e960883",
       "source": "Apple Developer Releases",
-      "title": "iOS 26.6 beta (23G5028e)",
+      "title": "iOS 27 beta (24A5355q)",
+      "link": "https://developer.apple.com/news/releases/?id=06082026b",
+      "published": "Mon, 08 Jun 2026 10:00:00 PDT",
+      "datetime": "2026-06-08T17:00:00+00:00",
       "kind": "beta",
-      "version": "26.6",
+      "version": "27",
       "beta_number": null,
       "rc_number": null,
-      "datetime": "2026-05-26T17:00:00+00:00"
+      "key": "d3dd2abc8294afa96f9716e7e5fc83126076ec1eb019055ba1c44d87de783d8c"
     }
   },
   "event_history": [
+    {
+      "key": "d3dd2abc8294afa96f9716e7e5fc83126076ec1eb019055ba1c44d87de783d8c",
+      "source": "Apple Developer Releases",
+      "title": "iOS 27 beta (24A5355q)",
+      "kind": "beta",
+      "version": "27",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-06-08T17:00:00+00:00"
+    },
+    {
+      "key": "05f1e06e4d03fd91486e98d770a8496c402919ea4b78e46cbdf617a31c116745",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 27 beta (24A5355q)",
+      "kind": "beta",
+      "version": "27",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-06-08T17:00:00+00:00"
+    },
     {
       "key": "3eb29983e0d0a125865cfb9cb03c224566a6e2105371a66892cded7d2552931a",
       "source": "Apple Developer Releases",
