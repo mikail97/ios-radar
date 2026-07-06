@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.5.2-23F84",
-  "last_run": "2026-07-06T16:35:51+00:00",
-  "last_meaningful_run": "2026-07-06T16:35:51+00:00",
+  "last_run": "2026-07-06T18:29:20+00:00",
+  "last_meaningful_run": "2026-07-06T18:29:20+00:00",
   "last_stage_key": "rc:26.5:stale",
   "last_estimation": {
     "score": 40,
@@ -12,7 +12,7 @@
     "window": "la RC es antigua; esperaría nueva RC o señal pública",
     "recommendation": "No daría aviso fuerte todavía.",
     "reasons": [
-      "la RC tiene 59.0 días"
+      "la RC tiene 59.1 días"
     ],
     "stage_key": "rc:26.5:stale",
     "latest_rc": {
@@ -26,17 +26,59 @@
       "datetime": "2026-05-08T17:00:00+00:00"
     },
     "latest_beta": {
-      "key": "648125163016ce953003dcf728cb8448ace5b1f931a6c4f35a90a6cbe48e46a8",
       "source": "Apple Developer Releases",
-      "title": "iOS 26.6 beta 3 (23G5052d)",
+      "title": "iOS 27.0 beta 3 (24A5380h)",
+      "link": "https://developer.apple.com/news/releases/?id=07062026g",
+      "published": "Mon, 06 Jul 2026 10:00:00 PDT",
+      "datetime": "2026-07-06T17:00:00+00:00",
       "kind": "beta",
-      "version": "26.6",
+      "version": "27.0",
       "beta_number": 3,
       "rc_number": null,
-      "datetime": "2026-06-29T17:00:00+00:00"
+      "key": "c72633a5993e55d9a28f599cf8353cf30cfc735879de0576451e1959595e6d4a"
     }
   },
   "event_history": [
+    {
+      "key": "c72633a5993e55d9a28f599cf8353cf30cfc735879de0576451e1959595e6d4a",
+      "source": "Apple Developer Releases",
+      "title": "iOS 27.0 beta 3 (24A5380h)",
+      "kind": "beta",
+      "version": "27.0",
+      "beta_number": 3,
+      "rc_number": null,
+      "datetime": "2026-07-06T17:00:00+00:00"
+    },
+    {
+      "key": "cc9eb859bb9e0d82e503a1405c9e415df0346a4e84fcf3b0d731e8cc13fa6abd",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 27.0 beta 3 (24A5380h)",
+      "kind": "beta",
+      "version": "27.0",
+      "beta_number": 3,
+      "rc_number": null,
+      "datetime": "2026-07-06T17:00:00+00:00"
+    },
+    {
+      "key": "ce02c7661fc8504abf07a48c27b01723fe8f2c924c172d29aec34b4cf95af316",
+      "source": "Apple Developer Releases",
+      "title": "iOS 26.6 beta 4 (23G5057c)",
+      "kind": "beta",
+      "version": "26.6",
+      "beta_number": 4,
+      "rc_number": null,
+      "datetime": "2026-07-06T17:00:00+00:00"
+    },
+    {
+      "key": "3208c0371ead0082a1e734d3543377badcdb9b13a3d114b47b4101723a9256f3",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 26.6 beta 4 (23G5057c)",
+      "kind": "beta",
+      "version": "26.6",
+      "beta_number": 4,
+      "rc_number": null,
+      "datetime": "2026-07-06T17:00:00+00:00"
+    },
     {
       "key": "648125163016ce953003dcf728cb8448ace5b1f931a6c4f35a90a6cbe48e46a8",
       "source": "Apple Developer Releases",
