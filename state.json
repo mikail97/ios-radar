@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.5.2-23F84",
-  "last_run": "2026-07-20T18:25:30+00:00",
-  "last_meaningful_run": "2026-07-20T18:25:30+00:00",
+  "last_run": "2026-07-20T20:01:22+00:00",
+  "last_meaningful_run": "2026-07-20T20:01:22+00:00",
   "last_stage_key": "rc:26.6:fresh",
   "last_estimation": {
     "score": 78,
@@ -16,28 +16,24 @@
     ],
     "stage_key": "rc:26.6:fresh",
     "latest_rc": {
+      "key": "9e7b329a48ddc2fd6e481786a4904c4296af9fe200f8d305cddf4e907cdbcd1b",
       "source": "Apple Developer Releases",
       "title": "iOS 26.6 RC (23G71)",
-      "link": "https://developer.apple.com/news/releases/?id=07202026a",
-      "published": "Mon, 20 Jul 2026 10:00:00 PDT",
-      "datetime": "2026-07-20T17:00:00+00:00",
       "kind": "rc",
       "version": "26.6",
       "beta_number": null,
       "rc_number": 1,
-      "key": "9e7b329a48ddc2fd6e481786a4904c4296af9fe200f8d305cddf4e907cdbcd1b"
+      "datetime": "2026-07-20T17:00:00+00:00"
     },
     "latest_beta": {
+      "key": "7a4551f6112c0790e095c37ab1941c085448f1f1413648b32463037a821cb154",
       "source": "Apple Developer Releases",
       "title": "iOS 27.0 beta 4 (24A5390f)",
-      "link": "https://developer.apple.com/news/releases/?id=07202026g",
-      "published": "Mon, 20 Jul 2026 10:00:00 PDT",
-      "datetime": "2026-07-20T17:00:00+00:00",
       "kind": "beta",
       "version": "27.0",
       "beta_number": 4,
       "rc_number": null,
-      "key": "7a4551f6112c0790e095c37ab1941c085448f1f1413648b32463037a821cb154"
+      "datetime": "2026-07-20T17:00:00+00:00"
     }
   },
   "event_history": [
