@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.5.2-23F84",
-  "last_run": "2026-07-26T06:26:48+00:00",
-  "last_meaningful_run": "2026-07-26T06:26:48+00:00",
+  "last_run": "2026-07-26T08:43:12+00:00",
+  "last_meaningful_run": "2026-07-26T08:43:12+00:00",
   "last_stage_key": "rc:26.6:window",
   "last_estimation": {
     "score": 88,
@@ -12,7 +12,7 @@
     "window": "entre lunes 27/07 y miércoles 29/07, sobre las 19:00 España",
     "recommendation": "Avisaría como probable esta semana.",
     "reasons": [
-      "hay RC desde hace 5.6 días",
+      "hay RC desde hace 5.7 días",
       "la final suele caer pocos días después de una RC"
     ],
     "stage_key": "rc:26.6:window",
