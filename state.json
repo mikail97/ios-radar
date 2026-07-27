@@ -2,19 +2,19 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.6-23G71",
-  "last_run": "2026-07-27T18:10:34+00:00",
-  "last_meaningful_run": "2026-07-27T18:10:34+00:00",
-  "last_stage_key": "public:None:26.6-23G71",
+  "last_run": "2026-07-27T19:49:49+00:00",
+  "last_meaningful_run": "2026-07-27T19:49:49+00:00",
+  "last_stage_key": "rc:26.6:old",
   "last_estimation": {
-    "score": 100,
-    "level": "YA DISPONIBLE",
-    "eta": "0 días",
-    "window": "ya está saliendo o ya está publicado",
-    "recommendation": "Avisaría ya: el update parece disponible o en despliegue.",
+    "score": 72,
+    "level": "ALTA PERO RARA",
+    "eta": "podría caer en cualquier momento, pero la RC ya empieza a ser vieja",
+    "window": "entre lunes 27/07 y miércoles 29/07, sobre las 19:00 España",
+    "recommendation": "Avisaría con cautela: probable, pero puede haberse retrasado.",
     "reasons": [
-      "ha cambiado Apple Security o ha aparecido un IPSW firmado"
+      "la RC tiene 7.1 días"
     ],
-    "stage_key": "public:None:26.6-23G71",
+    "stage_key": "rc:26.6:old",
     "latest_rc": {
       "key": "9e7b329a48ddc2fd6e481786a4904c4296af9fe200f8d305cddf4e907cdbcd1b",
       "source": "Apple Developer Releases",
@@ -37,6 +37,26 @@
     }
   },
   "event_history": [
+    {
+      "key": "9370a97e734ed8ccafec8d3c7ff4a2a0f4f3a1cde4f1ed16c22dd232115cc123",
+      "source": "Apple Developer Releases",
+      "title": "iOS 26.6 (23G71)",
+      "kind": "public_possible",
+      "version": "26.6",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-07-27T17:00:00+00:00"
+    },
+    {
+      "key": "90a21849b339948dac0365f59967b574e2447c637b95da46082c05c894e134a7",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 26.6 (23G71)",
+      "kind": "public_possible",
+      "version": "26.6",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-07-27T17:00:00+00:00"
+    },
     {
       "key": "7a4551f6112c0790e095c37ab1941c085448f1f1413648b32463037a821cb154",
       "source": "Apple Developer Releases",
