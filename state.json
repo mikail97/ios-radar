@@ -2,14 +2,14 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.6-23G71",
-  "last_run": "2026-07-28T23:36:15+00:00",
-  "last_meaningful_run": "2026-07-28T23:36:15+00:00",
+  "last_run": "2026-07-29T01:05:04+00:00",
+  "last_meaningful_run": "2026-07-29T01:05:04+00:00",
   "last_stage_key": "rc:26.6:old",
   "last_estimation": {
     "score": 72,
     "level": "ALTA PERO RARA",
     "eta": "podría caer en cualquier momento, pero la RC ya empieza a ser vieja",
-    "window": "entre martes 28/07 y miércoles 29/07, sobre las 19:00 España",
+    "window": "miércoles 29/07, sobre las 19:00 España",
     "recommendation": "Avisaría con cautela: probable, pero puede haberse retrasado.",
     "reasons": [
       "la RC tiene 8.3 días"
