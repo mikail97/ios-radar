@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.6-23G71",
-  "last_run": "2026-07-30T10:55:37+00:00",
-  "last_meaningful_run": "2026-07-30T10:55:37+00:00",
+  "last_run": "2026-07-30T12:20:46+00:00",
+  "last_meaningful_run": "2026-07-30T12:20:46+00:00",
   "last_stage_key": "rc:26.6:old",
   "last_estimation": {
     "score": 72,
@@ -12,7 +12,7 @@
     "window": "lunes 03/08, sobre las 19:00 España",
     "recommendation": "Avisaría con cautela: probable, pero puede haberse retrasado.",
     "reasons": [
-      "la RC tiene 9.7 días"
+      "la RC tiene 9.8 días"
     ],
     "stage_key": "rc:26.6:old",
     "latest_rc": {
