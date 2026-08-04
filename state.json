@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.6-23G71",
-  "last_run": "2026-08-04T16:44:26+00:00",
-  "last_meaningful_run": "2026-08-04T16:44:26+00:00",
+  "last_run": "2026-08-04T18:17:43+00:00",
+  "last_meaningful_run": "2026-08-04T18:17:43+00:00",
   "last_stage_key": "rc:26.6:stale",
   "last_estimation": {
     "score": 40,
@@ -12,7 +12,7 @@
     "window": "la RC es antigua; esperaría nueva RC o señal pública",
     "recommendation": "No daría aviso fuerte todavía.",
     "reasons": [
-      "la RC tiene 15.0 días"
+      "la RC tiene 15.1 días"
     ],
     "stage_key": "rc:26.6:stale",
     "latest_rc": {
@@ -435,6 +435,26 @@
       "version": "26.5",
       "beta_number": null,
       "rc_number": 1,
+      "datetime": "2026-05-04T17:00:00+00:00"
+    },
+    {
+      "key": "e969d8ff75b69b69a04d1dd01795574b9deba6605fb1110a8d1dd3f147afbc2b",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 26.5 RC (23F75)",
+      "kind": "rc",
+      "version": "26.5",
+      "beta_number": null,
+      "rc_number": 1,
+      "datetime": "2026-05-04T17:00:00+00:00"
+    },
+    {
+      "key": "cb76c6ea10c6a0e6989d5db80164aad15f8e7dca19daf04ed2c496252026ad42",
+      "source": "Apple Developer Releases",
+      "title": "iOS 18.7.9 (22H355)",
+      "kind": "public_possible",
+      "version": "18.7.9",
+      "beta_number": null,
+      "rc_number": null,
       "datetime": "2026-05-04T17:00:00+00:00"
     },
     {
