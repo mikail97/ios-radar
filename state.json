@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.6-23G71",
-  "last_run": "2026-08-10T18:08:48+00:00",
-  "last_meaningful_run": "2026-08-10T18:08:48+00:00",
+  "last_run": "2026-08-10T19:11:55+00:00",
+  "last_meaningful_run": "2026-08-10T19:11:55+00:00",
   "last_stage_key": "rc:26.6:stale",
   "last_estimation": {
     "score": 40,
@@ -12,7 +12,7 @@
     "window": "la RC es antigua; esperaría nueva RC o señal pública",
     "recommendation": "No daría aviso fuerte todavía.",
     "reasons": [
-      "la RC tiene 21.0 días"
+      "la RC tiene 21.1 días"
     ],
     "stage_key": "rc:26.6:stale",
     "latest_rc": {
@@ -26,16 +26,14 @@
       "datetime": "2026-07-20T17:00:00+00:00"
     },
     "latest_beta": {
+      "key": "d7f08918137bfa368adba43e88dbfcc9186057a7a1e7d3da595db38864a9a543",
       "source": "Apple Developer Releases",
       "title": "iOS 27.0 beta 5 (24A5408d)",
-      "link": "https://developer.apple.com/news/releases/?id=08102026f",
-      "published": "Mon, 10 Aug 2026 10:00:00 PDT",
-      "datetime": "2026-08-10T17:00:00+00:00",
       "kind": "beta",
       "version": "27.0",
       "beta_number": 5,
       "rc_number": null,
-      "key": "d7f08918137bfa368adba43e88dbfcc9186057a7a1e7d3da595db38864a9a543"
+      "datetime": "2026-08-10T17:00:00+00:00"
     }
   },
   "event_history": [
