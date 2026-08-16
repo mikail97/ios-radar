@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.6-23G71",
-  "last_run": "2026-08-16T18:09:09+00:00",
-  "last_meaningful_run": "2026-08-16T18:09:09+00:00",
+  "last_run": "2026-08-16T18:43:43+00:00",
+  "last_meaningful_run": "2026-08-16T18:43:43+00:00",
   "last_stage_key": "rc:26.6:stale",
   "last_estimation": {
     "score": 40,
@@ -12,7 +12,7 @@
     "window": "la RC es antigua; esperaría nueva RC o señal pública",
     "recommendation": "No daría aviso fuerte todavía.",
     "reasons": [
-      "la RC tiene 27.0 días"
+      "la RC tiene 27.1 días"
     ],
     "stage_key": "rc:26.6:stale",
     "latest_rc": {
