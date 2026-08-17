@@ -1,20 +1,20 @@
 {
   "initialized": true,
   "latest_security_version": null,
-  "latest_ipsw_fingerprint": "26.6-23G71",
-  "last_run": "2026-08-17T18:00:03+00:00",
-  "last_meaningful_run": "2026-08-17T18:00:03+00:00",
-  "last_stage_key": "rc:26.6:stale",
+  "latest_ipsw_fingerprint": "26.6.1-23G83",
+  "last_run": "2026-08-17T18:38:14+00:00",
+  "last_meaningful_run": "2026-08-17T18:38:14+00:00",
+  "last_stage_key": "public:None:26.6.1-23G83",
   "last_estimation": {
-    "score": 40,
-    "level": "MEDIA",
-    "eta": "incierta",
-    "window": "la RC es antigua; esperaría nueva RC o señal pública",
-    "recommendation": "No daría aviso fuerte todavía.",
+    "score": 100,
+    "level": "YA DISPONIBLE",
+    "eta": "0 días",
+    "window": "ya está saliendo o ya está publicado",
+    "recommendation": "Avisaría ya: el update parece disponible o en despliegue.",
     "reasons": [
-      "la RC tiene 28.0 días"
+      "ha cambiado Apple Security o ha aparecido un IPSW firmado"
     ],
-    "stage_key": "rc:26.6:stale",
+    "stage_key": "public:None:26.6.1-23G83",
     "latest_rc": {
       "key": "9e7b329a48ddc2fd6e481786a4904c4296af9fe200f8d305cddf4e907cdbcd1b",
       "source": "Apple Developer Releases",
@@ -26,16 +26,14 @@
       "datetime": "2026-07-20T17:00:00+00:00"
     },
     "latest_beta": {
+      "key": "37191623ab40c4bb4088ad815d20ce4479fe56a4422ec090c7c0934bdc701878",
       "source": "Apple Developer Releases",
       "title": "iOS 27.0 beta 6 (24A5418b)",
-      "link": "https://developer.apple.com/news/releases/?id=08172026a",
-      "published": "Mon, 17 Aug 2026 10:00:00 PDT",
-      "datetime": "2026-08-17T17:00:00+00:00",
       "kind": "beta",
       "version": "27.0",
       "beta_number": 6,
       "rc_number": null,
-      "key": "37191623ab40c4bb4088ad815d20ce4479fe56a4422ec090c7c0934bdc701878"
+      "datetime": "2026-08-17T17:00:00+00:00"
     }
   },
   "event_history": [
