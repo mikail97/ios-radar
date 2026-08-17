@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.6-23G71",
-  "last_run": "2026-08-17T17:40:29+00:00",
-  "last_meaningful_run": "2026-08-17T17:40:29+00:00",
+  "last_run": "2026-08-17T18:00:03+00:00",
+  "last_meaningful_run": "2026-08-17T18:00:03+00:00",
   "last_stage_key": "rc:26.6:stale",
   "last_estimation": {
     "score": 40,
@@ -26,17 +26,79 @@
       "datetime": "2026-07-20T17:00:00+00:00"
     },
     "latest_beta": {
-      "key": "d7f08918137bfa368adba43e88dbfcc9186057a7a1e7d3da595db38864a9a543",
       "source": "Apple Developer Releases",
-      "title": "iOS 27.0 beta 5 (24A5408d)",
+      "title": "iOS 27.0 beta 6 (24A5418b)",
+      "link": "https://developer.apple.com/news/releases/?id=08172026a",
+      "published": "Mon, 17 Aug 2026 10:00:00 PDT",
+      "datetime": "2026-08-17T17:00:00+00:00",
       "kind": "beta",
       "version": "27.0",
-      "beta_number": 5,
+      "beta_number": 6,
       "rc_number": null,
-      "datetime": "2026-08-10T17:00:00+00:00"
+      "key": "37191623ab40c4bb4088ad815d20ce4479fe56a4422ec090c7c0934bdc701878"
     }
   },
   "event_history": [
+    {
+      "key": "37191623ab40c4bb4088ad815d20ce4479fe56a4422ec090c7c0934bdc701878",
+      "source": "Apple Developer Releases",
+      "title": "iOS 27.0 beta 6 (24A5418b)",
+      "kind": "beta",
+      "version": "27.0",
+      "beta_number": 6,
+      "rc_number": null,
+      "datetime": "2026-08-17T17:00:00+00:00"
+    },
+    {
+      "key": "352ae3dcd44180997672b6b4b930174093bd7c3a217be9c4a90707e7fbdedd17",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 27.0 beta 6 (24A5418b)",
+      "kind": "beta",
+      "version": "27.0",
+      "beta_number": 6,
+      "rc_number": null,
+      "datetime": "2026-08-17T17:00:00+00:00"
+    },
+    {
+      "key": "5ff56f50c549901d22ada1ba88ee351cc0c1eeef772212f41dd73ede0bd26349",
+      "source": "Apple Developer Releases",
+      "title": "iOS 26.6.1 (23G83)",
+      "kind": "public_possible",
+      "version": "26.6.1",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-08-17T17:00:00+00:00"
+    },
+    {
+      "key": "f64050eaea87306e00f8aa00a0ceeb1ebcd6e004894b6a4b3702429a3b5b30ea",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 26.6.1 (23G83)",
+      "kind": "public_possible",
+      "version": "26.6.1",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-08-17T17:00:00+00:00"
+    },
+    {
+      "key": "ef9ab373e4352f201bf0ec5fc0ea4d0f52673371adae1d549d6c587f0bf0126c",
+      "source": "Apple Developer Releases",
+      "title": "iOS 18.7.10 (22H374)",
+      "kind": "public_possible",
+      "version": "18.7.10",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-08-17T17:00:00+00:00"
+    },
+    {
+      "key": "08180ea8a9ab77274ed1191ab673d01b2baf363e7868215a16e26e841f16dc39",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 18.7.10 (22H374)",
+      "kind": "public_possible",
+      "version": "18.7.10",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-08-17T17:00:00+00:00"
+    },
     {
       "key": "d7f08918137bfa368adba43e88dbfcc9186057a7a1e7d3da595db38864a9a543",
       "source": "Apple Developer Releases",
