@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.6.1-23G83",
-  "last_run": "2026-08-24T17:42:18+00:00",
-  "last_meaningful_run": "2026-08-24T17:42:18+00:00",
+  "last_run": "2026-08-24T18:02:30+00:00",
+  "last_meaningful_run": "2026-08-24T18:02:30+00:00",
   "last_stage_key": "rc:26.6:stale",
   "last_estimation": {
     "score": 40,
@@ -26,17 +26,39 @@
       "datetime": "2026-07-20T17:00:00+00:00"
     },
     "latest_beta": {
-      "key": "37191623ab40c4bb4088ad815d20ce4479fe56a4422ec090c7c0934bdc701878",
       "source": "Apple Developer Releases",
-      "title": "iOS 27.0 beta 6 (24A5418b)",
+      "title": "iOS 27.0 beta 7 (24A5424a)",
+      "link": "https://developer.apple.com/news/releases/?id=08242026a",
+      "published": "Mon, 24 Aug 2026 10:00:00 PDT",
+      "datetime": "2026-08-24T17:00:00+00:00",
       "kind": "beta",
       "version": "27.0",
-      "beta_number": 6,
+      "beta_number": 7,
       "rc_number": null,
-      "datetime": "2026-08-17T17:00:00+00:00"
+      "key": "4460dd6547ea7012222103f3ad07447a9247c70f4904717b97b2cbceeb2753ab"
     }
   },
   "event_history": [
+    {
+      "key": "4460dd6547ea7012222103f3ad07447a9247c70f4904717b97b2cbceeb2753ab",
+      "source": "Apple Developer Releases",
+      "title": "iOS 27.0 beta 7 (24A5424a)",
+      "kind": "beta",
+      "version": "27.0",
+      "beta_number": 7,
+      "rc_number": null,
+      "datetime": "2026-08-24T17:00:00+00:00"
+    },
+    {
+      "key": "eb582e84118878a348fa8318c5efc57912c12d7590d6f08d6efc1cb02a7aaee0",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 27.0 beta 7 (24A5424a)",
+      "kind": "beta",
+      "version": "27.0",
+      "beta_number": 7,
+      "rc_number": null,
+      "datetime": "2026-08-24T17:00:00+00:00"
+    },
     {
       "key": "37191623ab40c4bb4088ad815d20ce4479fe56a4422ec090c7c0934bdc701878",
       "source": "Apple Developer Releases",
