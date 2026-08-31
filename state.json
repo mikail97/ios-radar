@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.6.1-23G83",
-  "last_run": "2026-08-31T14:09:48+00:00",
-  "last_meaningful_run": "2026-08-31T14:09:48+00:00",
+  "last_run": "2026-08-31T19:59:46+00:00",
+  "last_meaningful_run": "2026-08-31T19:59:46+00:00",
   "last_stage_key": "rc:26.6:stale",
   "last_estimation": {
     "score": 40,
@@ -12,7 +12,7 @@
     "window": "la RC es antigua; esperaría nueva RC o señal pública",
     "recommendation": "No daría aviso fuerte todavía.",
     "reasons": [
-      "la RC tiene 41.9 días"
+      "la RC tiene 42.1 días"
     ],
     "stage_key": "rc:26.6:stale",
     "latest_rc": {
@@ -26,17 +26,39 @@
       "datetime": "2026-07-20T17:00:00+00:00"
     },
     "latest_beta": {
-      "key": "4460dd6547ea7012222103f3ad07447a9247c70f4904717b97b2cbceeb2753ab",
       "source": "Apple Developer Releases",
-      "title": "iOS 27.0 beta 7 (24A5424a)",
+      "title": "iOS 27.0 beta 8 (24A5430a)",
+      "link": "https://developer.apple.com/news/releases/?id=08312026a",
+      "published": "Mon, 31 Aug 2026 10:00:00 PDT",
+      "datetime": "2026-08-31T17:00:00+00:00",
       "kind": "beta",
       "version": "27.0",
-      "beta_number": 7,
+      "beta_number": 8,
       "rc_number": null,
-      "datetime": "2026-08-24T17:00:00+00:00"
+      "key": "698030e07d4dcae8df8c5325192ca87f67c1ee5648add2b7a2f33d7cafbb3422"
     }
   },
   "event_history": [
+    {
+      "key": "698030e07d4dcae8df8c5325192ca87f67c1ee5648add2b7a2f33d7cafbb3422",
+      "source": "Apple Developer Releases",
+      "title": "iOS 27.0 beta 8 (24A5430a)",
+      "kind": "beta",
+      "version": "27.0",
+      "beta_number": 8,
+      "rc_number": null,
+      "datetime": "2026-08-31T17:00:00+00:00"
+    },
+    {
+      "key": "d13ea029194fd7fb2c76baeb3ede326fe3c252e3b298c79c101796d8a35abaf1",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 27.0 beta 8 (24A5430a)",
+      "kind": "beta",
+      "version": "27.0",
+      "beta_number": 8,
+      "rc_number": null,
+      "datetime": "2026-08-31T17:00:00+00:00"
+    },
     {
       "key": "4460dd6547ea7012222103f3ad07447a9247c70f4904717b97b2cbceeb2753ab",
       "source": "Apple Developer Releases",
