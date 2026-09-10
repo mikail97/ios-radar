@@ -2,19 +2,20 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "26.6.2-23G90",
-  "last_run": "2026-09-10T13:32:32+00:00",
-  "last_meaningful_run": "2026-09-10T13:32:32+00:00",
-  "last_stage_key": "rc:27.0:fresh",
+  "last_run": "2026-09-10T17:09:42+00:00",
+  "last_meaningful_run": "2026-09-10T17:09:42+00:00",
+  "last_stage_key": "rc:27.0:window",
   "last_estimation": {
-    "score": 78,
-    "level": "ALTA",
-    "eta": "aprox. 2-7 días",
-    "window": "entre lunes 14/09 y miércoles 16/09, sobre las 19:00 España",
-    "recommendation": "Preavisaría: puede caer esta semana.",
+    "score": 88,
+    "level": "MUY ALTA",
+    "eta": "aprox. 0-8 días",
+    "window": "entre lunes 14/09 y martes 15/09, sobre las 19:00 España",
+    "recommendation": "Avisaría como probable esta semana.",
     "reasons": [
-      "la RC salió hace 0.9 días"
+      "hay RC desde hace 1.0 días",
+      "la final suele caer pocos días después de una RC"
     ],
-    "stage_key": "rc:27.0:fresh",
+    "stage_key": "rc:27.0:window",
     "latest_rc": {
       "key": "79f5a8485db176ee07345e23d1628ac70f473fa7124d472443a1d97953914e26",
       "source": "Apple Developer Releases",
