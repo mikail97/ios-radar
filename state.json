@@ -2,30 +2,29 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "27.0-24A437",
-  "last_run": "2026-09-14T20:31:30+00:00",
-  "last_meaningful_run": "2026-09-14T20:31:30+00:00",
-  "last_stage_key": "public:None:27.0-24A437",
+  "last_run": "2026-09-14T23:26:10+00:00",
+  "last_meaningful_run": "2026-09-14T23:26:10+00:00",
+  "last_stage_key": "rc:27.0:window",
   "last_estimation": {
-    "score": 100,
-    "level": "YA DISPONIBLE",
-    "eta": "0 días",
-    "window": "ya está saliendo o ya está publicado",
-    "recommendation": "Avisaría ya: el update parece disponible o en despliegue.",
+    "score": 88,
+    "level": "MUY ALTA",
+    "eta": "aprox. 0-6 días",
+    "window": "entre lunes 14/09 y miércoles 16/09, sobre las 19:00 España",
+    "recommendation": "Avisaría como probable esta semana.",
     "reasons": [
-      "ha cambiado Apple Security o ha aparecido un IPSW firmado"
+      "hay RC desde hace 3.3 días",
+      "la final suele caer pocos días después de una RC"
     ],
-    "stage_key": "public:None:27.0-24A437",
+    "stage_key": "rc:27.0:window",
     "latest_rc": {
+      "key": "d2bccc89700b8c04518a7bf39bce4a3838b6354c24b99f335e2958ef14c5ae1a",
       "source": "Apple Developer Releases",
       "title": "iOS 27.0 RC (24A437)",
-      "link": "https://developer.apple.com/news/releases/?id=09112026a",
-      "published": "Fri, 11 Sep 2026 10:00:00 PDT",
-      "datetime": "2026-09-11T17:00:00+00:00",
       "kind": "rc",
       "version": "27.0",
       "beta_number": null,
       "rc_number": 1,
-      "key": "d2bccc89700b8c04518a7bf39bce4a3838b6354c24b99f335e2958ef14c5ae1a"
+      "datetime": "2026-09-11T17:00:00+00:00"
     },
     "latest_beta": {
       "key": "698030e07d4dcae8df8c5325192ca87f67c1ee5648add2b7a2f33d7cafbb3422",
