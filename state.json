@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "27.0-24A437",
-  "last_run": "2026-09-16T21:18:27+00:00",
-  "last_meaningful_run": "2026-09-16T21:18:27+00:00",
+  "last_run": "2026-09-16T23:41:07+00:00",
+  "last_meaningful_run": "2026-09-16T23:41:07+00:00",
   "last_stage_key": "rc:27.0:window",
   "last_estimation": {
     "score": 88,
@@ -12,7 +12,7 @@
     "window": "miércoles 16/09, sobre las 19:00 España",
     "recommendation": "Avisaría como probable esta semana.",
     "reasons": [
-      "hay RC desde hace 5.2 días",
+      "hay RC desde hace 5.3 días",
       "la final suele caer pocos días después de una RC"
     ],
     "stage_key": "rc:27.0:window",
@@ -27,16 +27,14 @@
       "datetime": "2026-09-11T17:00:00+00:00"
     },
     "latest_beta": {
+      "key": "b3161bf4a575d8c350081a8b13c2e64464ebf3f21ea7608ce511f7c4a30ffaff",
       "source": "Apple Developer Releases",
       "title": "iOS 27.2 beta (24B5084k)",
-      "link": "https://developer.apple.com/news/releases/?id=09162026a",
-      "published": "Wed, 16 Sep 2026 10:00:00 PDT",
-      "datetime": "2026-09-16T17:00:00+00:00",
       "kind": "beta",
       "version": "27.2",
       "beta_number": null,
       "rc_number": null,
-      "key": "b3161bf4a575d8c350081a8b13c2e64464ebf3f21ea7608ce511f7c4a30ffaff"
+      "datetime": "2026-09-16T17:00:00+00:00"
     }
   },
   "event_history": [
