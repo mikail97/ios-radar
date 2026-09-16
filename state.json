@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "27.0-24A437",
-  "last_run": "2026-09-16T18:15:13+00:00",
-  "last_meaningful_run": "2026-09-16T18:15:13+00:00",
+  "last_run": "2026-09-16T21:18:27+00:00",
+  "last_meaningful_run": "2026-09-16T21:18:27+00:00",
   "last_stage_key": "rc:27.0:window",
   "last_estimation": {
     "score": 88,
@@ -12,7 +12,7 @@
     "window": "miércoles 16/09, sobre las 19:00 España",
     "recommendation": "Avisaría como probable esta semana.",
     "reasons": [
-      "hay RC desde hace 5.1 días",
+      "hay RC desde hace 5.2 días",
       "la final suele caer pocos días después de una RC"
     ],
     "stage_key": "rc:27.0:window",
@@ -27,17 +27,49 @@
       "datetime": "2026-09-11T17:00:00+00:00"
     },
     "latest_beta": {
-      "key": "698030e07d4dcae8df8c5325192ca87f67c1ee5648add2b7a2f33d7cafbb3422",
       "source": "Apple Developer Releases",
-      "title": "iOS 27.0 beta 8 (24A5430a)",
+      "title": "iOS 27.2 beta (24B5084k)",
+      "link": "https://developer.apple.com/news/releases/?id=09162026a",
+      "published": "Wed, 16 Sep 2026 10:00:00 PDT",
+      "datetime": "2026-09-16T17:00:00+00:00",
       "kind": "beta",
-      "version": "27.0",
-      "beta_number": 8,
+      "version": "27.2",
+      "beta_number": null,
       "rc_number": null,
-      "datetime": "2026-08-31T17:00:00+00:00"
+      "key": "b3161bf4a575d8c350081a8b13c2e64464ebf3f21ea7608ce511f7c4a30ffaff"
     }
   },
   "event_history": [
+    {
+      "key": "6881c3a22270c1c4adb2108ab96ebf37e2c70eb462e1d960882dd6d6f6099676",
+      "source": "Apple Developer News",
+      "title": "Get your subscriptions ready for iOS 27",
+      "kind": "public_possible",
+      "version": "27",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-09-16T17:02:58+00:00"
+    },
+    {
+      "key": "b3161bf4a575d8c350081a8b13c2e64464ebf3f21ea7608ce511f7c4a30ffaff",
+      "source": "Apple Developer Releases",
+      "title": "iOS 27.2 beta (24B5084k)",
+      "kind": "beta",
+      "version": "27.2",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-09-16T17:00:00+00:00"
+    },
+    {
+      "key": "dfbe9f365d7f909832b202336e8da192f04646ef9412b51103dfee584d9b692a",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 27.2 beta (24B5084k)",
+      "kind": "beta",
+      "version": "27.2",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-09-16T17:00:00+00:00"
+    },
     {
       "key": "7c35cb37eaa25238528f0eaa11d04e9f80f3cd68c29d87eddde1d527cdd7b9b0",
       "source": "Apple Developer Releases",
