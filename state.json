@@ -2,19 +2,19 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "27.0.1-24A446",
-  "last_run": "2026-09-28T19:38:06+00:00",
-  "last_meaningful_run": "2026-09-28T19:38:06+00:00",
-  "last_stage_key": "public:None:27.0.1-24A446",
+  "last_run": "2026-09-28T23:55:00+00:00",
+  "last_meaningful_run": "2026-09-28T23:55:00+00:00",
+  "last_stage_key": "rc:27.0:stale",
   "last_estimation": {
-    "score": 100,
-    "level": "YA DISPONIBLE",
-    "eta": "0 días",
-    "window": "ya está saliendo o ya está publicado",
-    "recommendation": "Avisaría ya: el update parece disponible o en despliegue.",
+    "score": 40,
+    "level": "MEDIA",
+    "eta": "incierta",
+    "window": "la RC es antigua; esperaría nueva RC o señal pública",
+    "recommendation": "No daría aviso fuerte todavía.",
     "reasons": [
-      "ha cambiado Apple Security o ha aparecido un IPSW firmado"
+      "la RC tiene 17.3 días"
     ],
-    "stage_key": "public:None:27.0.1-24A446",
+    "stage_key": "rc:27.0:stale",
     "latest_rc": {
       "key": "d2bccc89700b8c04518a7bf39bce4a3838b6354c24b99f335e2958ef14c5ae1a",
       "source": "Apple Developer Releases",
