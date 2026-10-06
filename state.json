@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "27.0.1-24A446",
-  "last_run": "2026-10-05T21:14:44+00:00",
-  "last_meaningful_run": "2026-10-05T21:14:44+00:00",
+  "last_run": "2026-10-06T01:44:15+00:00",
+  "last_meaningful_run": "2026-10-06T01:44:15+00:00",
   "last_stage_key": "rc:27.0:stale",
   "last_estimation": {
     "score": 40,
@@ -12,7 +12,7 @@
     "window": "la RC es antigua; esperaría nueva RC o señal pública",
     "recommendation": "No daría aviso fuerte todavía.",
     "reasons": [
-      "la RC tiene 24.2 días"
+      "la RC tiene 24.4 días"
     ],
     "stage_key": "rc:27.0:stale",
     "latest_rc": {
@@ -26,16 +26,14 @@
       "datetime": "2026-09-11T17:00:00+00:00"
     },
     "latest_beta": {
+      "key": "265df356cdbd00db2644fa9c54bb9f1516db6f9e77585e8052c3e7f925a58020",
       "source": "Apple Developer Releases",
       "title": "iOS 27.2 beta 3 (24B5099f)",
-      "link": "https://developer.apple.com/news/releases/?id=10052026a",
-      "published": "Mon, 05 Oct 2026 11:00:00 PDT",
-      "datetime": "2026-10-05T18:00:00+00:00",
       "kind": "beta",
       "version": "27.2",
       "beta_number": 3,
       "rc_number": null,
-      "key": "265df356cdbd00db2644fa9c54bb9f1516db6f9e77585e8052c3e7f925a58020"
+      "datetime": "2026-10-05T18:00:00+00:00"
     }
   },
   "event_history": [
