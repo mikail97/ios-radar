@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "27.0.1-24A446",
-  "last_run": "2026-10-13T18:12:43+00:00",
-  "last_meaningful_run": "2026-10-13T18:12:43+00:00",
+  "last_run": "2026-10-13T22:41:44+00:00",
+  "last_meaningful_run": "2026-10-13T22:41:44+00:00",
   "last_stage_key": "rc:27.0:stale",
   "last_estimation": {
     "score": 40,
@@ -12,7 +12,7 @@
     "window": "la RC es antigua; esperaría nueva RC o señal pública",
     "recommendation": "No daría aviso fuerte todavía.",
     "reasons": [
-      "la RC tiene 32.1 días"
+      "la RC tiene 32.2 días"
     ],
     "stage_key": "rc:27.0:stale",
     "latest_rc": {
@@ -26,17 +26,39 @@
       "datetime": "2026-09-11T17:00:00+00:00"
     },
     "latest_beta": {
-      "key": "265df356cdbd00db2644fa9c54bb9f1516db6f9e77585e8052c3e7f925a58020",
       "source": "Apple Developer Releases",
-      "title": "iOS 27.2 beta 3 (24B5099f)",
+      "title": "iOS 27.2 beta 4 (24B5110a)",
+      "link": "https://developer.apple.com/news/releases/?id=10132026a",
+      "published": "Tue, 13 Oct 2026 10:00:00 PDT",
+      "datetime": "2026-10-13T17:00:00+00:00",
       "kind": "beta",
       "version": "27.2",
-      "beta_number": 3,
+      "beta_number": 4,
       "rc_number": null,
-      "datetime": "2026-10-05T18:00:00+00:00"
+      "key": "57d0c989fed04172d84f8ee4e6621d97dc5f9573546c643c094c7fbcca509b6d"
     }
   },
   "event_history": [
+    {
+      "key": "57d0c989fed04172d84f8ee4e6621d97dc5f9573546c643c094c7fbcca509b6d",
+      "source": "Apple Developer Releases",
+      "title": "iOS 27.2 beta 4 (24B5110a)",
+      "kind": "beta",
+      "version": "27.2",
+      "beta_number": 4,
+      "rc_number": null,
+      "datetime": "2026-10-13T17:00:00+00:00"
+    },
+    {
+      "key": "3ee84f36f13e5960f02b8dedd0084694e9ab3ad209a1d9184cc1b8c8f1046821",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 27.2 beta 4 (24B5110a)",
+      "kind": "beta",
+      "version": "27.2",
+      "beta_number": 4,
+      "rc_number": null,
+      "datetime": "2026-10-13T17:00:00+00:00"
+    },
     {
       "key": "265df356cdbd00db2644fa9c54bb9f1516db6f9e77585e8052c3e7f925a58020",
       "source": "Apple Developer Releases",
@@ -816,26 +838,6 @@
       "beta_number": null,
       "rc_number": null,
       "datetime": "2026-04-22T17:00:00+00:00"
-    },
-    {
-      "key": "d1a5a5b7f1e43a24f915ba45028b9b84cfcb9a6bc945ed87fdaf8b4d111ac05e",
-      "source": "Apple Developer News",
-      "title": "Adjustments to the China storefront of the App Store on iOS and iPadOS",
-      "kind": "other",
-      "version": null,
-      "beta_number": null,
-      "rc_number": null,
-      "datetime": "2026-03-13T01:00:21+00:00"
-    },
-    {
-      "key": "ac70cb9bad2f16962c4491ead47ec221027842371a3beaab684c38f92e8603d3",
-      "source": "Apple Developer Releases",
-      "title": "iOS 16.7.15 (20H380)",
-      "kind": "public_possible",
-      "version": "16.7.15",
-      "beta_number": null,
-      "rc_number": null,
-      "datetime": "2026-03-11T21:00:00+00:00"
     }
   ]
 }
