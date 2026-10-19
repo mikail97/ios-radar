@@ -2,28 +2,30 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "27.0.1-24A446",
-  "last_run": "2026-10-19T13:01:00+00:00",
-  "last_meaningful_run": "2026-10-19T13:01:00+00:00",
-  "last_stage_key": "rc:27.0:stale",
+  "last_run": "2026-10-19T19:16:12+00:00",
+  "last_meaningful_run": "2026-10-19T19:16:12+00:00",
+  "last_stage_key": "rc:27.2:fresh",
   "last_estimation": {
-    "score": 40,
-    "level": "MEDIA",
-    "eta": "incierta",
-    "window": "la RC es antigua; esperaría nueva RC o señal pública",
-    "recommendation": "No daría aviso fuerte todavía.",
+    "score": 78,
+    "level": "ALTA",
+    "eta": "aprox. 2-7 días",
+    "window": "entre martes 20/10 y lunes 26/10, sobre las 19:00 España",
+    "recommendation": "Preavisaría: puede caer esta semana.",
     "reasons": [
-      "la RC tiene 37.8 días"
+      "la RC salió hace 0.1 días"
     ],
-    "stage_key": "rc:27.0:stale",
+    "stage_key": "rc:27.2:fresh",
     "latest_rc": {
-      "key": "d2bccc89700b8c04518a7bf39bce4a3838b6354c24b99f335e2958ef14c5ae1a",
       "source": "Apple Developer Releases",
-      "title": "iOS 27.0 RC (24A437)",
+      "title": "iOS 27.2 RC (24B115)",
+      "link": "https://developer.apple.com/news/releases/?id=10192026a",
+      "published": "Mon, 19 Oct 2026 10:00:00 PDT",
+      "datetime": "2026-10-19T17:00:00+00:00",
       "kind": "rc",
-      "version": "27.0",
+      "version": "27.2",
       "beta_number": null,
       "rc_number": 1,
-      "datetime": "2026-09-11T17:00:00+00:00"
+      "key": "13887c9774fe52d431cfc40d317b05197009ba786719d36986d3aaca5d1c9974"
     },
     "latest_beta": {
       "key": "57d0c989fed04172d84f8ee4e6621d97dc5f9573546c643c094c7fbcca509b6d",
@@ -37,6 +39,26 @@
     }
   },
   "event_history": [
+    {
+      "key": "13887c9774fe52d431cfc40d317b05197009ba786719d36986d3aaca5d1c9974",
+      "source": "Apple Developer Releases",
+      "title": "iOS 27.2 RC (24B115)",
+      "kind": "rc",
+      "version": "27.2",
+      "beta_number": null,
+      "rc_number": 1,
+      "datetime": "2026-10-19T17:00:00+00:00"
+    },
+    {
+      "key": "0bc5c9d6b5da545307181ce501477a35ddfe5d642cd275c4fa690b1dbcf79674",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 27.2 RC (24B115)",
+      "kind": "rc",
+      "version": "27.2",
+      "beta_number": null,
+      "rc_number": 1,
+      "datetime": "2026-10-19T17:00:00+00:00"
+    },
     {
       "key": "57d0c989fed04172d84f8ee4e6621d97dc5f9573546c643c094c7fbcca509b6d",
       "source": "Apple Developer Releases",
@@ -816,26 +838,6 @@
       "beta_number": null,
       "rc_number": null,
       "datetime": "2026-05-04T17:00:00+00:00"
-    },
-    {
-      "key": "93ed50f8257dfc18a2302d757cc581ed062e05c820df69bf1016e1d8f019ebb2",
-      "source": "Apple Developer Releases",
-      "title": "iOS 26.4.2 (23E261)",
-      "kind": "public_possible",
-      "version": "26.4.2",
-      "beta_number": null,
-      "rc_number": null,
-      "datetime": "2026-04-22T17:00:00+00:00"
-    },
-    {
-      "key": "61db36ec45a1a58141180a17a6888b126788d6fac863e85fbfb20fca77374759",
-      "source": "Apple Developer Releases",
-      "title": "iPadOS 26.4.2 (23E261)",
-      "kind": "public_possible",
-      "version": "26.4.2",
-      "beta_number": null,
-      "rc_number": null,
-      "datetime": "2026-04-22T17:00:00+00:00"
     }
   ]
 }
