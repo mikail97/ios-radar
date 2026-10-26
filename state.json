@@ -1,21 +1,20 @@
 {
   "initialized": true,
   "latest_security_version": null,
-  "latest_ipsw_fingerprint": "27.0.1-24A446",
-  "last_run": "2026-10-26T13:24:36+00:00",
-  "last_meaningful_run": "2026-10-26T13:24:36+00:00",
-  "last_stage_key": "rc:27.2:window",
+  "latest_ipsw_fingerprint": "27.2-24B119",
+  "last_run": "2026-10-26T19:25:35+00:00",
+  "last_meaningful_run": "2026-10-26T19:25:35+00:00",
+  "last_stage_key": "public:None:27.2-24B119",
   "last_estimation": {
-    "score": 88,
-    "level": "MUY ALTA",
-    "eta": "aprox. 0-3 días",
-    "window": "entre lunes 26/10 y miércoles 28/10, sobre las 19:00 España",
-    "recommendation": "Avisaría como probable esta semana.",
+    "score": 100,
+    "level": "YA DISPONIBLE",
+    "eta": "0 días",
+    "window": "ya está saliendo o ya está publicado",
+    "recommendation": "Avisaría ya: el update parece disponible o en despliegue.",
     "reasons": [
-      "hay RC desde hace 6.9 días",
-      "la final suele caer pocos días después de una RC"
+      "ha cambiado Apple Security o ha aparecido un IPSW firmado"
     ],
-    "stage_key": "rc:27.2:window",
+    "stage_key": "public:None:27.2-24B119",
     "latest_rc": {
       "key": "13887c9774fe52d431cfc40d317b05197009ba786719d36986d3aaca5d1c9974",
       "source": "Apple Developer Releases",
@@ -38,6 +37,66 @@
     }
   },
   "event_history": [
+    {
+      "key": "56a04fde62f68382c5c425c0f12c16684272af77672e7349ba17029cf7fb13ab",
+      "source": "Apple Developer Releases",
+      "title": "iOS 27.2 (24B91020)",
+      "kind": "public_possible",
+      "version": "27.2",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-10-26T17:00:00+00:00"
+    },
+    {
+      "key": "49b3cd878b7f569014a0f94f77387f04f613dcfdbde118f06fc28d9c2dc7edfd",
+      "source": "Apple Developer Releases",
+      "title": "iOS 27.2 (24B119)",
+      "kind": "public_possible",
+      "version": "27.2",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-10-26T17:00:00+00:00"
+    },
+    {
+      "key": "58fae47c61a7ec6544df7045ebff58825a29e98a45b168addc1d5b3b3f4cfd56",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 27.2 (24B119)",
+      "kind": "public_possible",
+      "version": "27.2",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-10-26T17:00:00+00:00"
+    },
+    {
+      "key": "e42ab10b2cf621b4670e186a561518a6a88bcd303f41f5e46af35e2021ced2a3",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 26.7.2 (23H128)",
+      "kind": "public_possible",
+      "version": "26.7.2",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-10-26T17:00:00+00:00"
+    },
+    {
+      "key": "a039c4406118deebcecbb78083bf879a5be3b41b59e4851445f4e92437660d2d",
+      "source": "Apple Developer Releases",
+      "title": "iOS 18.7.11 (22H384)",
+      "kind": "public_possible",
+      "version": "18.7.11",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-10-26T17:00:00+00:00"
+    },
+    {
+      "key": "d4117adf72141b62c0b715e51da99760c1bc2f31f47f0a4f866a77ddfb9bcd3d",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 18.7.11 (22H384)",
+      "kind": "public_possible",
+      "version": "18.7.11",
+      "beta_number": null,
+      "rc_number": null,
+      "datetime": "2026-10-26T17:00:00+00:00"
+    },
     {
       "key": "13887c9774fe52d431cfc40d317b05197009ba786719d36986d3aaca5d1c9974",
       "source": "Apple Developer Releases",
@@ -777,66 +836,6 @@
       "beta_number": null,
       "rc_number": null,
       "datetime": "2026-05-11T17:00:00+00:00"
-    },
-    {
-      "key": "5949a12a427656d3a1e26819043c693ac4d315b77209c81bd1cca2589128ce40",
-      "source": "Apple Developer Releases",
-      "title": "iPadOS 15.8.8 (19H422)",
-      "kind": "public_possible",
-      "version": "15.8.8",
-      "beta_number": null,
-      "rc_number": null,
-      "datetime": "2026-05-11T17:00:00+00:00"
-    },
-    {
-      "key": "832a0220f5e218e8fde5d5215a54d6490dffe5373aaa8cbcd117966800aed0f8",
-      "source": "Apple Developer Releases",
-      "title": "iOS 26.5 RC 2 (23F77)",
-      "kind": "rc",
-      "version": "26.5",
-      "beta_number": null,
-      "rc_number": 2,
-      "datetime": "2026-05-08T17:00:00+00:00"
-    },
-    {
-      "key": "526b27d7b78c37187e4411f437efe9a872fd887bdcb0e5de92ecf06ba96ba7e4",
-      "source": "Apple Developer Releases",
-      "title": "iPadOS 26.5 RC 2 (23F77)",
-      "kind": "rc",
-      "version": "26.5",
-      "beta_number": null,
-      "rc_number": 2,
-      "datetime": "2026-05-08T17:00:00+00:00"
-    },
-    {
-      "key": "1654cd7ed37c35751485130d878758bc8d66c1121017195e8e0b2802d3e8b272",
-      "source": "Apple Developer Releases",
-      "title": "iOS 26.5 RC (23F75)",
-      "kind": "rc",
-      "version": "26.5",
-      "beta_number": null,
-      "rc_number": 1,
-      "datetime": "2026-05-04T17:00:00+00:00"
-    },
-    {
-      "key": "e969d8ff75b69b69a04d1dd01795574b9deba6605fb1110a8d1dd3f147afbc2b",
-      "source": "Apple Developer Releases",
-      "title": "iPadOS 26.5 RC (23F75)",
-      "kind": "rc",
-      "version": "26.5",
-      "beta_number": null,
-      "rc_number": 1,
-      "datetime": "2026-05-04T17:00:00+00:00"
-    },
-    {
-      "key": "cb76c6ea10c6a0e6989d5db80164aad15f8e7dca19daf04ed2c496252026ad42",
-      "source": "Apple Developer Releases",
-      "title": "iOS 18.7.9 (22H355)",
-      "kind": "public_possible",
-      "version": "18.7.9",
-      "beta_number": null,
-      "rc_number": null,
-      "datetime": "2026-05-04T17:00:00+00:00"
     }
   ]
 }
