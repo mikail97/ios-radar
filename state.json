@@ -2,8 +2,8 @@
   "initialized": true,
   "latest_security_version": null,
   "latest_ipsw_fingerprint": "27.2.1-24B156",
-  "last_run": "2026-11-16T18:58:25+00:00",
-  "last_meaningful_run": "2026-11-16T18:58:25+00:00",
+  "last_run": "2026-11-17T02:14:49+00:00",
+  "last_meaningful_run": "2026-11-17T02:14:49+00:00",
   "last_stage_key": "rc:27.2:stale",
   "last_estimation": {
     "score": 40,
@@ -12,7 +12,7 @@
     "window": "la RC es antigua; esperaría nueva RC o señal pública",
     "recommendation": "No daría aviso fuerte todavía.",
     "reasons": [
-      "la RC tiene 28.1 días"
+      "la RC tiene 28.4 días"
     ],
     "stage_key": "rc:27.2:stale",
     "latest_rc": {
@@ -26,17 +26,39 @@
       "datetime": "2026-10-19T17:00:00+00:00"
     },
     "latest_beta": {
-      "key": "f6d063a4b5878de3fe68a8872dd50163df2fbfff517256943371a27b21651267",
       "source": "Apple Developer Releases",
-      "title": "iOS 27.3 beta (24C5037i)",
+      "title": "iOS 27.3 beta 2 (24C5049d)",
+      "link": "https://developer.apple.com/news/releases/?id=11162026a",
+      "published": "Mon, 16 Nov 2026 10:00:00 PST",
+      "datetime": "2026-11-16T18:00:00+00:00",
       "kind": "beta",
       "version": "27.3",
-      "beta_number": null,
+      "beta_number": 2,
       "rc_number": null,
-      "datetime": "2026-11-03T18:00:00+00:00"
+      "key": "ab30f41a902a01bea8ae613380780b630dd67c02120859cdd00759e992998ed8"
     }
   },
   "event_history": [
+    {
+      "key": "ab30f41a902a01bea8ae613380780b630dd67c02120859cdd00759e992998ed8",
+      "source": "Apple Developer Releases",
+      "title": "iOS 27.3 beta 2 (24C5049d)",
+      "kind": "beta",
+      "version": "27.3",
+      "beta_number": 2,
+      "rc_number": null,
+      "datetime": "2026-11-16T18:00:00+00:00"
+    },
+    {
+      "key": "2c29c8c9b77699009cca783f8f6ea4747bc3fb47b8f54c4da8aaa471d785887f",
+      "source": "Apple Developer Releases",
+      "title": "iPadOS 27.3 beta 2 (24C5049d)",
+      "kind": "beta",
+      "version": "27.3",
+      "beta_number": 2,
+      "rc_number": null,
+      "datetime": "2026-11-16T18:00:00+00:00"
+    },
     {
       "key": "152fde9c286bfa778fc8de3f2f91fef2e0b0a9d47a7b08fc013f7ff2740ba53b",
       "source": "Apple Developer Releases",
@@ -816,26 +838,6 @@
       "beta_number": null,
       "rc_number": null,
       "datetime": "2026-06-01T17:00:00+00:00"
-    },
-    {
-      "key": "ac454bfb3f3ac83da8f0c58e900bf5ee068624e58b1d4c0e6876669d2e960883",
-      "source": "Apple Developer Releases",
-      "title": "iOS 26.6 beta (23G5028e)",
-      "kind": "beta",
-      "version": "26.6",
-      "beta_number": null,
-      "rc_number": null,
-      "datetime": "2026-05-26T17:00:00+00:00"
-    },
-    {
-      "key": "6ad09955a18cbf1e3fa2220d5ce7de5fb614199d20111526b29d68ed4b6f8ab6",
-      "source": "Apple Developer Releases",
-      "title": "iPadOS 26.6 beta (23G5028e)",
-      "kind": "beta",
-      "version": "26.6",
-      "beta_number": null,
-      "rc_number": null,
-      "datetime": "2026-05-26T17:00:00+00:00"
     }
   ]
 }
